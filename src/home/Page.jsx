@@ -1,21 +1,16 @@
-import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'motion/react'
-const bkgd = "https://i.ibb.co/V95MszS/xim-acm.jpg"
+const bkgd = "https://images.unsplash.com/photo-1614200179396-2bdb77ebf81b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+import About from './About'
 
-// motion is used in the NoticeBoard component
-import { ArrowLeft } from 'lucide-react'
 
 const Page = () => {
   return (
     <div className='relative'>
-      <div className='max-w-[80rem] h-[calc(100vh-8rem)] w-full  mx-auto relative'>
-        <div className=''>
-          <h1 className=' text-2xl text-black/80'>Home Page</h1>
-        </div>
-        <NoticeBoard />
+      <div className=' h-[calc(100vh-6rem)] w-full mx-auto relative'>
+        <div className='absolute pb-4 pl-5 pr-10 text-6xl font-bold text-neutral-700 bg-neutral-50 rounded-br-[40px] uppercase tracking-tighter'>Association For Computing Machinery</div>
+        <img src={bkgd} alt="" className='w-full object-cover'/>
+        <div className='absolute bottom-0 right-0 py-6 px-8 text-6xl font-bold text-neutral-700 tracking-tighter bg-neutral-50 rounded-tl-[40px]'>STUDENT CHAPTER</div>
       </div>
-
-      <AboutSection />
+      <About />
       <div className='min-h-40'></div>
     </div>
   )
@@ -46,31 +41,3 @@ function AboutSection() {
 
 
 
-function NoticeBoard() {
-  const noticeRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: noticeRef,
-  })
-  const opacity = useTransform(scrollYProgress, [0.8, 1], ["0%", "100%"])
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, blur: "100px", x: 40 }}
-      whileInView={{ opacity: 1, blur: "0px", x: 0 }}
-      viewport={{ once: false }}
-      ref={noticeRef}
-      style={{ opacity }}
-      className='absolute scale-80 lg:scale-100 bottom-0 -left-4 lg:-left-20 lg:bottom-1 group cursor-pointer'>
-      <div className='w-80 bg-black relative'>
-        <motion.div
-          whileHover={{ scale: 1.01 }}
-          transition={{ type: 'spring', stiffness: 300 }} className='flex items-center justify-between px-5'>
-          <ArrowLeft color='white' size={24} className='relative' />
-          <h1 className='text-white text-[1.35rem] text-center py-4'>Check out our newsletter</h1>
-        </motion.div>
-        <span className='absolute left-10 h-6 w-4 bg-black'></span>
-        <span className='absolute right-10 h-6 w-4 bg-black'></span>
-      </div>
-    </motion.div>
-  )
-}
