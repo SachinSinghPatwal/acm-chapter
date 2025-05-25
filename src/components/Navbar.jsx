@@ -10,14 +10,14 @@ import {
   XCircle,
 } from "lucide-react";
 import { NavLink } from "react-router";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Links = [
   { name: "Events", link: "/events" },
   { name: "Team", link: "/team" },
   { name: "Gallery", link: "/gallery" },
   { name: "Notice", link: "/newsletter" },
-  { name: "Contact Us", link: "/contact" },
+  { name: "Contact", link: "/contact" },
 ];
 
 const SideNavLinks = [
@@ -58,9 +58,10 @@ const Navbar = () => {
             <NavLink
               key={index}
               to={link.link}
-              className="text-md tracking-wide text-black/70 group transition ease-in-out duration-300 relative w-fit px-5 pb-1 border-b border-r"
+              className="text-md tracking-wide text-black/70 group transition ease-in-out duration-300 relative w-fit px-5 pb-1"
             >
               {link.name}
+              <span className="absolute left-0 -bottom-[5px] h-[1.5px] w-0 group-hover:w-full bg-blue-500/80 transtition ease-in-out duration-300"></span>
             </NavLink>
           ))}
         </div>
@@ -101,13 +102,16 @@ function SideNavbar({ isOpen, setIsOpen }) {
       }  z-50 overflow-hidden  transition-all ease-in-out duration-500 shadow-2xl/30 `}
     >
       <div className="max-w-[100rem]  w-full mx-auto flex flex-col  h-full items-start justify-around px-4 sm:px-8">
-        <motion.div layout className={`w-full h-[50%] block ${navImage}  rounded-4xl mt-2 relative`}>
+        <motion.div
+          layout
+          className={`w-full h-[50%] block ${navImage}  rounded-4xl mt-2 relative`}
+        >
           <X
             onClick={() => {
               setIsOpen(!isOpen);
               setNavImage("bg-neutral-300");
             }}
-            className="size-18 p-5 bg-white absolute -top-1 right-0 rounded-bl-2xl cursor-pointer"
+            className=" size-12  md:size-18 p-2 md:p-5 bg-white absolute -top-1 right-0 rounded-bl-2xl cursor-pointer"
           />
         </motion.div>
 
@@ -115,13 +119,13 @@ function SideNavbar({ isOpen, setIsOpen }) {
           {SideNavLinks.map((link, index) => (
             <motion.NavLink
               onMouseEnter={() => setNavImage(link.img)}
-            //   onMouseLeave={() => setNavImage("")}
+              //   onMouseLeave={() => setNavImage("")}
               initial={{ opacity: 0, blur: "50px" }}
               whileInView={{ opacity: 1, blur: "0px" }}
               transition={{ duration: 0.6, delay: 0.5 + 0.11 * index }}
               key={index}
               to={link.link}
-              className="group relative text-xl md:text-2xl lg:text-3xl xl:text-5xl md:border-b border-neutral-400/80 py-1 w-full md:hover:pl-2 transition-all ease-in-out duration-500 cursor-pointer"
+              className="group relative text-xl md:text-2xl lg:text-3xl xl:text-5xl md:border-b border-neutral-400/20 py-1 w-full md:hover:pl-2 transition-all ease-in-out duration-500 cursor-pointer"
             >
               {link.name}
               <span className="absolute left-0 -bottom-[5px] h-[4.5px] w-0 group-hover:w-full bg-blue-500/80 transtition ease-in-out duration-300"></span>
@@ -130,7 +134,7 @@ function SideNavbar({ isOpen, setIsOpen }) {
         </div>
       </div>
 
-      <div className="absolute hidden -bottom-1 right-0  md:flex item-center gap-6 p-4 xl:px-6 rounded-tl-3xl bg-neutral-100">
+      <div className="absolute hidden  right-0 -bottom-1 lg:flex item-center gap-6 p-4 xl:px-6 rounded-tl-3xl bg-neutral-100">
         {Socials.map((icon, i) => (
           <NavLink
             key={i}
@@ -159,7 +163,7 @@ function NoticeBoard() {
       viewport={{ once: false }}
       ref={noticeRef}
       style={{ opacity }}
-      className="absolute -top-5 right-20 lg:right-28 lg:bottom-1 group cursor-pointer scale-80 lg:scale-100"
+      className="absolute -top-6 right-20 lg:right-28 lg:bottom-1 group cursor-pointer scale-80 lg:scale-100"
     >
       <div className="w-44 bg-black relative">
         <motion.div className="flex items-center justify-around p-1 lg:p-2">

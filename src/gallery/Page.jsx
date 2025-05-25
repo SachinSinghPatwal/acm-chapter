@@ -2,7 +2,7 @@ import React from 'react'
 
 const Page = () => {
   return (
-    <div>Gallery Page</div>
+    <div className='min-h-screen text-2xl w-full p-10'>Gallery Page</div>
   )
 }
 
