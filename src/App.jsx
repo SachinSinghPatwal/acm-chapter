@@ -6,7 +6,7 @@ import Team from './team/Page'
 import Gallery from './gallery/Page'
 import Newsletter from './newsletter/Page'
 import Navbar from './components/Navbar'
-import Contact from './contactus/Page'
+import Contact from './contact/Page'
 
 
 const App = () => {
