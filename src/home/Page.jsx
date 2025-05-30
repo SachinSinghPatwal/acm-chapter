@@ -7,7 +7,10 @@ import MeetTeam from "./sections/MeetTeam";
 import Footer from "./sections/Footer";
 import CallToAction from "./sections/CallToAction";
 
-const Page = () => {
+import ScrollProgress from "../utils.jsx/ScrollProgress";
+
+const Page = () => { 
+
   return (
     <div className="relative">
       <Hero />
@@ -18,9 +21,13 @@ const Page = () => {
       <MeetTeam/>
       <CallToAction/>
       <Footer/>
+      <ScrollProgress/>
     </div>
   );
 };
 
 export default Page;
+
+
+
 
