@@ -42,7 +42,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full px-6 sm:px-10 py-8 h-24 z-50 flex items-center">
+    <div className="w-full fixed px-6 sm:px-10 py-8 h-24 flex items-center bg-neutral-50 backdrop-blur-lg z-[999] ">
       <div className="w-full max-w-[85rem] mx-auto flex justify-between gap-12 items-center relative">
         <a
           href="/"
@@ -53,7 +53,7 @@ const Navbar = () => {
             Student Chapter
           </span>
         </a>
-        <div className=" hidden lg:flex">
+        <div className=" hidden lg:flex relative -left-6">
           {Links.map((link, index) => (
             <NavLink
               key={index}
@@ -65,7 +65,7 @@ const Navbar = () => {
             </NavLink>
           ))}
         </div>
-        <NoticeBoard />
+        <NoticeBoard isOpen={isOpen} />
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="rounded-full bg-neutral-200/80 cursor-pointer p-3.5 flex items-center justify-center"
@@ -101,21 +101,21 @@ function SideNavbar({ isOpen, setIsOpen }) {
         isOpen ? "left-0" : "left-[220dvw]"
       }  z-50 overflow-hidden  transition-all ease-in-out duration-500 shadow-2xl/30 `}
     >
-      <div className="max-w-[100rem]  w-full mx-auto flex flex-col  h-full items-start justify-around px-4 sm:px-8">
+      <div className="max-w-[100rem] w-full mx-auto flex flex-col gap-4  h-full items-start justify-between pt-6 px-4 sm:px-8">
         <motion.div
           layout
-          className={`w-full h-[50%] block ${navImage}  rounded-4xl mt-2 relative`}
+          className={`w-full h-[50%] block ${navImage}  rounded-4xl md:mt-2 relative`}
         >
           <X
             onClick={() => {
               setIsOpen(!isOpen);
               setNavImage("bg-neutral-300");
             }}
-            className=" size-12  md:size-18 p-2 md:p-5 bg-white absolute -top-1 right-0 rounded-bl-2xl cursor-pointer"
+            className=" size-12 md:size-16 p-2 md:p-4 bg-white absolute -top-1 right-0 rounded-bl-2xl cursor-pointer"
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-x-20 p-2 w-[90%] md:gap-6 font-medium overflow-auto relative ">
+        <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-x-20 p-2 w-[90%] md:gap-6 font-medium relative -top-2 md:-top-4">
           {SideNavLinks.map((link, index) => (
             <motion.NavLink
               onMouseEnter={() => setNavImage(link.img)}
@@ -125,7 +125,7 @@ function SideNavbar({ isOpen, setIsOpen }) {
               transition={{ duration: 0.6, delay: 0.5 + 0.11 * index }}
               key={index}
               to={link.link}
-              className="group relative text-xl md:text-2xl lg:text-3xl xl:text-5xl md:border-b border-neutral-400/20 py-1 w-full md:hover:pl-2 transition-all ease-in-out duration-500 cursor-pointer"
+              className="group relative text-xl md:text-2xl lg:text-3xl xl:text-5xl md:border-b border-neutral-400/20 py-0.5 w-full md:hover:pl-2 transition-all ease-in-out duration-500 cursor-pointer"
             >
               {link.name}
               <span className="absolute left-0 -bottom-[5px] h-[4.5px] w-0 group-hover:w-full bg-blue-500/80 transtition ease-in-out duration-300"></span>
@@ -149,12 +149,10 @@ function SideNavbar({ isOpen, setIsOpen }) {
   );
 }
 
-function NoticeBoard() {
+function NoticeBoard({isOpen}) {
   const noticeRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: noticeRef,
-  });
-  const opacity = useTransform(scrollYProgress, [0.8, 1], ["0%", "100%"]);
+  const { scrollYProgress } = useScroll();
+  const opacity = useTransform(scrollYProgress, [0.12, 0.1, 0], ["0%", "100%", "100%"]);
 
   return (
     <motion.div
@@ -163,14 +161,14 @@ function NoticeBoard() {
       viewport={{ once: false }}
       ref={noticeRef}
       style={{ opacity }}
-      className="absolute -top-6 right-20 lg:right-28 lg:bottom-1 group cursor-pointer scale-80 lg:scale-100"
+      className={`fixed top-0 right-48 lg:right-60 group cursor-pointer scale-80 lg:scale-100 z-[999] ${isOpen ? "hidden" : "block"} transition-all ease-in-out duration-500`}
     >
-      <div className="w-44 bg-black relative">
-        <motion.div className="flex items-center justify-around p-1 lg:p-2">
-          <h1 className="text-white text-xs text-center p-1">
-            Check out our newsletter
+      <div className="w-fit bg-black relative">
+        <motion.div className="flex items-center justify-around p-1  lg:px-3">
+          <h1 className="text-white/95 text-xs text-center p-1 relative ">
+            Checkout our newsletter
           </h1>
-          <ArrowRight color="white" size={18} className="relative top-[1px]" />
+          <ArrowRight color="white" size={18} className="relative opacity-95 top-[1px]" />
         </motion.div>
       </div>
     </motion.div>

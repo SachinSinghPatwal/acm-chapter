@@ -1,9 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
 * {
     -ms-overflow-style: none;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 ::-webkit-scrollbar {
     display: none;
+}
+
+
+
+@theme {
+  --font-bebas-neue: 'Bebas Neue', sans-serif;
+  --font-inter: 'Inter',  sans-serif;
+}
+
+/* CUSTOM TAILWIND CLASSES */
+.px-max{
+  @apply px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32;
 }

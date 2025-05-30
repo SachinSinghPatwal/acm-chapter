@@ -10,9 +10,11 @@ import Contact from './contact/Page'
 
 
 const App = () => {
+
   return (
     <div className='bg-neutral-50 '>
       <Navbar />
+      <div className='h-24' />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<Events />} />
