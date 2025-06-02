@@ -6,6 +6,10 @@
     -ms-overflow-style: none;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     overflow-x: hidden;
 }
@@ -23,5 +27,9 @@ body{
 
 /* CUSTOM TAILWIND CLASSES */
 .px-max{
-  @apply px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32;
+  @apply px-4 sm:px-8 md:px-12 lg:px-16 ;
+}
+
+.pl-max{
+  @apply pl-4 sm:pl-8 md:pl-12 lg:pl-16 ;
 }

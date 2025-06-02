@@ -42,33 +42,30 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full fixed px-6 sm:px-10 py-8 h-24 flex items-center bg-neutral-50 backdrop-blur-lg z-[999] ">
+    <div className="w-full fixed px-6 sm:px-10 py-8 h-22 flex items-center bg-neutral-50 backdrop-blur-lg z-[999] shadow">
       <div className="w-full max-w-[85rem] mx-auto flex justify-between gap-12 items-center relative">
         <a
           href="/"
-          className="text-6xl font-bold relative -top-2 text-blue-500/90"
+          className="text-4xl xl:text-5xl font-bold relative -top-1 text-black-500/90 "
         >
-          ACM
-          <span className="absolute left-3 tracking-wide -bottom-4 text-black/80 text-sm mx-auto w-full">
-            Student Chapter
-          </span>
+          LOGO
         </a>
-        <div className=" hidden lg:flex relative -left-6">
+        <div className=" hidden lg:flex relative gap-8 -left-8">
           {Links.map((link, index) => (
             <NavLink
               key={index}
               to={link.link}
-              className="text-md tracking-wide text-black/70 group transition ease-in-out duration-300 relative w-fit px-5 pb-1"
+              className="text-xl tracking-wide text-black/80 group transition ease-in-out duration-300 relative px-3"
             >
               {link.name}
-              <span className="absolute left-0 -bottom-[5px] h-[1.5px] w-0 group-hover:w-full bg-blue-500/80 transtition ease-in-out duration-300"></span>
+              <span className="absolute left-0 w-0 h-0.5 group-hover:w-full -bottom-2 bg-blue-500/90 transtition ease-in-out duration-300"></span>
             </NavLink>
           ))}
         </div>
         <NoticeBoard isOpen={isOpen} />
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="rounded-full bg-neutral-200/80 cursor-pointer p-3.5 flex items-center justify-center"
+          className="rounded-full bg-neutral-200/80 cursor-pointer p-3.5 relative -top-1 flex items-center justify-center"
         >
           <Menu />
         </button>
@@ -101,7 +98,7 @@ function SideNavbar({ isOpen, setIsOpen }) {
         isOpen ? "left-0" : "left-[220dvw]"
       }  z-50 overflow-hidden  transition-all ease-in-out duration-500 shadow-2xl/30 `}
     >
-      <div className="max-w-[100rem] w-full mx-auto flex flex-col gap-4  h-full items-start justify-between pt-6 px-4 sm:px-8">
+      <div className="max-w-[100rem] w-full mx-auto flex flex-col gap-4 h-full items-start justify-between pt-2 px-4 sm:px-8">
         <motion.div
           layout
           className={`w-full h-[50%] block ${navImage}  rounded-4xl md:mt-2 relative`}
@@ -161,7 +158,7 @@ function NoticeBoard({isOpen}) {
       viewport={{ once: false }}
       ref={noticeRef}
       style={{ opacity }}
-      className={`fixed top-0 right-48 lg:right-60 group cursor-pointer scale-80 lg:scale-100 z-[999] ${isOpen ? "hidden" : "block"} transition-all ease-in-out duration-500`}
+      className={`fixed top-0 right-48  2xl:right-80 group cursor-pointer scale-80 hidden xl:block lg:scale-100 z-[999] ${isOpen ? "hidden" : "block"} transition-all ease-in-out duration-500`}
     >
       <div className="w-fit bg-black relative">
         <motion.div className="flex items-center justify-around p-1  lg:px-3">
