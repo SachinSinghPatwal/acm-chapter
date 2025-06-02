@@ -1,6 +1,6 @@
 import React from "react";
 import UpcomingEvents from "../../components/UpcomingEvents";
-import PastEvents from "../../components/PastEvents";
+import PreviousEvents from "../../components/PreviousEvents";
 
 const Events = () => {
   return (
@@ -8,7 +8,7 @@ const Events = () => {
       <div className=" h-full mx-auto text-2xl  flex flex-col gap-10">
         <UpcomingEvents />
 
-        <PastEvents />
+        <PreviousEvents />
       </div>
     </div>
   );

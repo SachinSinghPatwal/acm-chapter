@@ -22,8 +22,8 @@ export default function HorizontalScroll() {
                   initial={{ width: 0 }}
                   whileInView={{ width: "100%" }}
                   // viewport={{ once: true }}
-                  transition={{delay:0.3, duration: 1, ease: "easeInOut" }}
-                  className="absolute left-0 bottom-0 h-1 bg-gradient-to-r from-green-600 to-green-600 rounded-full"
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="absolute left-0 bottom-0 h-1 bg-green-500 rounded-full"
                 />
               </h1>
         </div>

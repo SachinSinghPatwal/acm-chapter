@@ -23,7 +23,7 @@ function HighlightHeader(){
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
+          transition={{delay:0.1, duration: 0.3, ease: "easeInOut" }}
         className="font-black w-fit font-bebas-neue text-4xl sm:text-6xl md:text-[5rem]  3xl:text-9xl relative whitespace-nowrap">
            Our <AuroraText>Highlights</AuroraText>
         </motion.h1>
