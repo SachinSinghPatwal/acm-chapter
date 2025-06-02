@@ -50,6 +50,11 @@ function StackPanel() {
         bgColor="bg-red-200"
         cardTextColor="text-neutral-600"
       />
+      <ProjectSection
+        title="And more..."
+        bgColor="bg-cyan-200"
+        cardTextColor="text-neutral-600"
+      />
     </div>
   );
 }
