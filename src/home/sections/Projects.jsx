@@ -16,18 +16,19 @@ export default Projects;
 
 function SidePanel() {
   return (
-    <div className="h-[calc(100vh-5rem)] sticky top-22 w-1/4 py-8 px-4 md:px-8 flex flex-col gap-6 border-r border-neutral-300">
+    <div className="h-[calc(100vh-5rem)] sticky top-22 w-1/4 py-12 px-4 md:px-8 flex flex-col border-r border-neutral-300">
       <h1 className="font-bebas-neue font-black text-4xl sm:text-6xl md:text-[5rem] ">
         Projects
       </h1>
-      <div>
+      <div className="flex flex-col mt-2 gap-4">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, est.
         </p>
-        <button className="my-4 text-blue-700 text-xl cursor-pointer flex gap-2 items-center ">
+        <button className=" text-blue-700 text-xl cursor-pointer flex gap-2 items-center ">
           View More
         </button>
       </div>
+     
     </div>
   );
 }
@@ -85,7 +86,7 @@ function ProjectCard({ index, cardTextColor }) {
     <div className="flex items-center justify-between cursor-pointer group">
       <div className="flex flex-col items-center gap-2 rounded-xl bg-white">
         <div className="h-[21rem] aspect-[4/3] flex flex-col p-1 ">
-            <img src={Img3} alt="" className="object-cover h-60 rounded-xl " />
+          <img src={Img3} alt="" className="object-cover h-60 rounded-xl " />
           <div className="mt-2 mb-1 flex flex-col gap-0.5">
             <h2 className="text-xl px-2  font-semibold">Project {index + 1}</h2>
             <p

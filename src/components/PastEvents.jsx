@@ -1,5 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { TextAnimate } from "./magicui/TextAnimate";
+import { BlurFade } from "./magicui/BlurFade";
 
 export default function HorizontalScroll() {
   const targetRef = useRef(null);
@@ -12,17 +14,18 @@ export default function HorizontalScroll() {
       <div className="sticky flex flex-col justify-between h-[100dvh] top-10 py-16 overflow-hidden">
         {/* title */}        
         <div className="px-max ">
-          <h1 className="relative w-fit font-black font-bebas-neue text-4xl sm:text-6xl md:text-[5rem] 3xl:text-9xl">
-            Previous Events
-            <motion.span
-              initial={{ width: 0 }}
-              whileInView={{ width: "100%" }}
-              delay={20}
-              viewport={{ once: true }}
-              transition={{ duration: 1, ease: "easeInOut" }}
-              className="absolute left-0 bottom-0 h-1 bg-gradient-to-r from-green-500 to-green-500 rounded-full"
-            />
-          </h1>
+          <h1 className="font-black w-fit font-bebas-neue text-4xl sm:text-6xl md:text-[5rem]  relative">
+                <TextAnimate animation="blurIn" as="h1" by="character" delay={0.3}>
+                Previous events
+              </TextAnimate>
+                <motion.span
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "100%" }}
+                  // viewport={{ once: true }}
+                  transition={{delay:0.3, duration: 1, ease: "easeInOut" }}
+                  className="absolute left-0 bottom-0 h-1 bg-gradient-to-r from-green-600 to-green-600 rounded-full"
+                />
+              </h1>
         </div>
         {/* List of events */}
         <motion.div
@@ -30,6 +33,7 @@ export default function HorizontalScroll() {
           className="flex gap-10 3xl:gap-16 h-full w-[100vw] my-16"
         >
           {PastEvents.map((event, i) => (
+            <BlurFade delay={0.3} inView>
             <motion.div
               key={i}
               className={`w-full h-full relative max-h-[40rem] aspect-video shadow rounded-xl ${event.image} relative cursor-pointer group`}
@@ -43,6 +47,7 @@ export default function HorizontalScroll() {
 
               </div>
             </motion.div>
+            </BlurFade>
           ))}
         </motion.div>
       </div>

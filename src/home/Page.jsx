@@ -7,7 +7,7 @@ import MeetTeam from "./sections/MeetTeam";
 import Footer from "./sections/Footer";
 import CallToAction from "./sections/CallToAction";
 
-import ScrollProgress from "../utils.jsx/ScrollProgress";
+import ScrollProgress from "../lib/ScrollProgress";
 
 const Page = () => { 
 

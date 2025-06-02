@@ -7,9 +7,8 @@ import {
   TwitterIcon,
   YoutubeIcon,
   ArrowRight,
-  XCircle,
 } from "lucide-react";
-import { NavLink } from "react-router";
+import { Link } from "react-router";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const Links = [
@@ -42,30 +41,33 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full fixed px-6 sm:px-10 py-8 h-22 flex items-center bg-neutral-50 backdrop-blur-lg z-[999] shadow">
+    <div className="w-full fixed px-6 sm:px-10 py-8 h-18 flex items-center bg-neutral-50/90 backdrop-blur-lg z-[999] shadow">
       <div className="w-full max-w-[85rem] mx-auto flex justify-between gap-12 items-center relative">
         <a
           href="/"
-          className="text-4xl xl:text-5xl font-bold relative -top-1 text-black-500/90 "
+          className="text-3xl xl:text-4xl flex gap-1 font-bold relative  text-black-500/90 "
         >
-          LOGO
+          <h1>ACM</h1>
+          <div>
+            <span className="text-blue-500">XIM</span>
+          </div>
         </a>
-        <div className=" hidden lg:flex relative gap-8 -left-8">
+        <div className=" hidden lg:flex relative gap-6 -left-10 top-1">
           {Links.map((link, index) => (
-            <NavLink
+            <Link
               key={index}
               to={link.link}
-              className="text-xl tracking-wide text-black/80 group transition ease-in-out duration-300 relative px-3"
+              className="text-sm tracking-wide font-inter text-black/80 group transition ease-in-out duration-300 relative px-3"
             >
               {link.name}
-              <span className="absolute left-0 w-0 h-0.5 group-hover:w-full -bottom-2 bg-blue-500/90 transtition ease-in-out duration-300"></span>
-            </NavLink>
+              <span className="absolute left-0 w-0 h-0.5 group-hover:w-full -bottom-1 bg-blue-500/90 transtition ease-in-out duration-300"></span>
+            </Link>
           ))}
         </div>
         <NoticeBoard isOpen={isOpen} />
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="rounded-full bg-neutral-200/80 cursor-pointer p-3.5 relative -top-1 flex items-center justify-center"
+          className="rounded-full bg-neutral-200/80 cursor-pointer p-3.5 relative  flex items-center justify-center"
         >
           <Menu />
         </button>
@@ -114,7 +116,7 @@ function SideNavbar({ isOpen, setIsOpen }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-x-20 p-2 w-[90%] md:gap-6 font-medium relative -top-2 md:-top-4">
           {SideNavLinks.map((link, index) => (
-            <motion.NavLink
+            <motion.Link
               onMouseEnter={() => setNavImage(link.img)}
               //   onMouseLeave={() => setNavImage("")}
               initial={{ opacity: 0, blur: "50px" }}
@@ -126,20 +128,20 @@ function SideNavbar({ isOpen, setIsOpen }) {
             >
               {link.name}
               <span className="absolute left-0 -bottom-[5px] h-[4.5px] w-0 group-hover:w-full bg-blue-500/80 transtition ease-in-out duration-300"></span>
-            </motion.NavLink>
+            </motion.Link>
           ))}
         </div>
       </div>
 
       <div className="absolute hidden  right-0 -bottom-1 lg:flex item-center gap-6 p-4 xl:px-6 rounded-tl-3xl bg-neutral-100">
         {Socials.map((icon, i) => (
-          <NavLink
+          <Link
             key={i}
             className="size-12 xl:size-14 rounded-full shadow-md/30 flex justify-center items-center hover:shadow-lg/30 hover:-top-2 relative duration-500 ease-in-out cursor-pointer"
             to={icon.link}
           >
             {icon.icon}
-          </NavLink>
+          </Link>
         ))}
       </div>
     </div>

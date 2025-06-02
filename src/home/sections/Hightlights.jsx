@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import HighlightGrid from "../../components/HighlightGrid";
+import { AuroraText } from "../../components/magicui/AuroraText";
 
 const Hightlights = () => {
   return (
@@ -17,9 +18,15 @@ export default Hightlights;
 function HighlightHeader(){
   return(
 <div className="w-full flex items-center gap-4 ">
-        <h1 className="font-black w-fit font-bebas-neue text-4xl sm:text-6xl md:text-[5rem] 3xl:text-9xl relative whitespace-nowrap">
-          Our Highlights
-        </h1>
+    
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="font-black w-fit font-bebas-neue text-4xl sm:text-6xl md:text-[5rem]  3xl:text-9xl relative whitespace-nowrap">
+           Our <AuroraText>Highlights</AuroraText>
+        </motion.h1>
         <div className="h-full w-full flex flex-col gap-3 items-center justify-center">
           <span className="h-1 w-full bg-orange-500 rounded-full " />
           <span className="h-1 w-full bg-green-500 rounded-full " />

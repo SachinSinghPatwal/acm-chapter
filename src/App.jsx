@@ -13,8 +13,10 @@ const App = () => {
 
   return (
     <div className='bg-neutral-50 '>
+
       <Navbar />
-      <div className='h-24' />
+      <div className='h-18' />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<Events />} />
