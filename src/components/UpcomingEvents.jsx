@@ -4,6 +4,7 @@ import mario from "/public/mario.jpg";
 import { motion } from "framer-motion";
 import { TextAnimate } from "./magicui/TextAnimate";
 import { BlurFade } from "./magicui/BlurFade";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function UpcomingEvents() {
   return (
@@ -14,16 +15,13 @@ export default function UpcomingEvents() {
           <UpcomingEventCard
             image={arco}
             title="OMG! Arco is here!"
-            gradientFrom="from-neutral-800/10"
-            gradientTo="to-neutral-800/10"
+
           />
         </BlurFade>
         <BlurFade delay={0.45} inView>
           <UpcomingEventCard
             image={mario}
-            title="Marco Polo Drill with Astro"
-            gradientFrom="from-neutral-800/20"
-            gradientTo="to-neutral-800/20"
+            title="Marco Polo Mario"
           />
         </BlurFade>
       </motion.div>
@@ -47,7 +45,7 @@ function UpcomingEventsHeader() {
   );
 }
 
-function UpcomingEventCard({ image, title, gradientFrom, gradientTo }) {
+function UpcomingEventCard({ image, title,}) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -56,9 +54,6 @@ function UpcomingEventCard({ image, title, gradientFrom, gradientTo }) {
       transition={{ duration: 0.5, ease: "easeInOut" }}
       className="grow shrink-0 aspect-video relative cursor-pointer group "
     >
-      <div
-        className={`absolute inset-0 bg-gradient-to-b group-hover:${gradientFrom} group-hover:${gradientTo} transition-all ease-in-out duration-700`}
-      ></div>
       <motion.div className="absolute inset-0 bg-black -z-10 rounded-2xl " />
       <motion.div
         whileHover={{ x: -8, y: -4 }}
@@ -70,10 +65,17 @@ function UpcomingEventCard({ image, title, gradientFrom, gradientTo }) {
           backgroundRepeat: "no-repeat",
         }}
       ></motion.div>
-      <div className="absolute my-1 px-1 md:my-2 w-full flex items-center ">
+      <div className="absolute my-1 px-1 md:my-2 w-full flex items-center justify-between">
         <p className="font-inter text-xl md:text-[2rem] font-bold text-black relative  group-hover:tracking-wide transition-all duration-500">
           {title}
         </p>
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="mr-2  hidden group-hover:flex "
+        >
+          <ArrowUpRight className="size-8 mb-2" />
+        </motion.p>
       </div>
     </motion.div>
   );

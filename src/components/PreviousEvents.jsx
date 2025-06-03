@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { TextAnimate } from "./magicui/TextAnimate";
 import { BlurFade } from "./magicui/BlurFade";
+import { ArrowUpRight } from "lucide-react";
 
 export default function HorizontalScroll() {
   const targetRef = useRef(null);
@@ -24,8 +25,11 @@ export default function HorizontalScroll() {
               <motion.div
                 key={i}
                 whileHover={{ y: -15 }}
-                className={`w-full h-full relative max-h-[30rem] lg:max-h-[40rem] aspect-video shadow rounded-xl ${event.image} relative cursor-pointer  group `}
+                className={`w-full h-full relative  max-h-[30rem] lg:max-h-[40rem] aspect-video shadow rounded-xl   cursor-pointer  group `}
               >
+                <div className={`h-full w-full rounded-xl  ${event.image}`} />
+
+                
                 <div className="absolute -bottom-20 w-full flex items-center justify-between ">
                   <p className="font-inter text-[1.6rem] font-bold text-black">
                     {event.title}
@@ -34,6 +38,13 @@ export default function HorizontalScroll() {
                       {event.date}
                     </span>
                   </p>
+                  <motion.p
+                    initial={{ opacity: 0, y: -40 }}
+                    whileInView={{ opacity: 1, y: -18 }}
+                    className="mr-2  hidden group-hover:flex "
+                  >
+                    <ArrowUpRight className="size-8 " />
+                  </motion.p>
                 </div>
               </motion.div>
             </BlurFade>

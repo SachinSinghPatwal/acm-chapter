@@ -1,12 +1,137 @@
 import { motion } from "framer-motion";
 import Img3 from "/public/img2.jpg";
 
+// Data for projects
+const projectsData = [
+  {
+    title: "Web Development",
+    bgColor: "bg-sky-200",
+    microBg: "bg-blue-100",
+    cardTextColor: "text-blue-600",
+    projects: [
+      {
+        name: "Project 1",
+        description: "Brief description of the project. Result which has been achieved through this project.",
+        stack: ["React", "Node.js", "Express", "MongoDB", "Gemini API"],
+        image: Img3,
+      },
+      {
+        name: "Project 2",
+        description: "Brief description of the project. Result which has been achieved through this project.",
+        stack: ["React", "Node.js", "Express", "MongoDB", "Gemini API"],
+        image: Img3,
+      },
+      {
+        name: "Project 3",
+        description: "Brief description of the project. Result which has been achieved through this project.",
+        stack: ["React", "Node.js", "Express", "MongoDB", "Gemini API"],
+        image: Img3,
+      },
+      {
+        name: "Project 4",
+        description: "Brief description of the project. Result which has been achieved through this project.",
+        stack: ["React", "Node.js", "Express", "MongoDB", "Gemini API"],
+        image: Img3,
+      },
+      {
+        name: "Project 5",
+        description: "Brief description of the project. Result which has been achieved through this project.",
+        stack: ["React", "Node.js", "Express", "MongoDB", "Gemini API"],
+        image: Img3,
+      },
+    ],
+  },
+  {
+    title: "Data Science",
+    bgColor: "bg-orange-200",
+    microBg: "bg-orange-100",
+    cardTextColor: "text-orange-600",
+    projects: [
+      {
+        name: "Project 1",
+        description: "Brief description of the project. Result which has been achieved through this project.",
+        stack: ["Python", "Pandas", "NumPy", "Scikit-learn"],
+        image: Img3,
+      },
+      {
+        name: "Project 2",
+        description: "Brief description of the project. Result which has been achieved through this project.",
+        stack: ["Python", "Pandas", "NumPy", "Scikit-learn"],
+        image: Img3,
+      },
+      {
+        name: "Project 3",
+        description: "Brief description of the project. Result which has been achieved through this project.",
+        stack: ["Python", "Pandas", "NumPy", "Scikit-learn"],
+        image: Img3,
+      },
+      // ...add more projects as needed
+    ],
+  },
+  {
+    title: "Internet of Things",
+    bgColor: "bg-red-200",
+    microBg: "bg-red-100",
+    cardTextColor: "text-red-600",
+    projects: [
+      {
+        name: "Project 1",
+        description: "Brief description of the project. Result which has been achieved through this project.",
+        stack: ["Arduino", "C++", "Sensors"],
+        image: Img3,
+      },
+      {
+        name: "Project 2",
+        description: "Brief description of the project. Result which has been achieved through this project.",
+        stack: ["Arduino", "C++", "Sensors"],
+        image: Img3,
+      },
+      {
+        name: "Project 3",
+        description: "Brief description of the project. Result which has been achieved through this project.",
+        stack: ["Arduino", "C++", "Sensors"],
+        image: Img3,
+      },
+      // ...
+      // add more projects as needed
+    ],
+  },
+  {
+    title: "And more...",
+    bgColor: "bg-cyan-200",
+    microBg: "bg-cyan-100",
+    cardTextColor: "text-cyan-600",
+    projects: [
+      {
+        name: "Project 1",
+        description: "Brief description of the project. Result which has been achieved through this project.",
+        stack: ["Other Tech"],
+        image: Img3,
+      },
+      {
+        name: "Project 2",
+        description: "Brief description of the project. Result which has been achieved through this project.",
+        stack: ["Other Tech"],
+        image: Img3,
+      },
+      {
+        name: "Project 3",
+        description: "Brief description of the project. Result which has been achieved through this project.",
+        stack: ["Other Tech"],
+        image: Img3,
+      },
+      // ...add more projects as needed
+    ],
+  },
+];
+
+// Main Projects Component
 const Projects = () => {
   return (
     <div className="min-h-screen text-2xl w-full hidden md:block">
       <div className="flex relative border-y border-neutral-300 ">
         <SidePanel />
-        <StackPanel />
+        <StackPanel projectsData={projectsData} />
       </div>
     </div>
   );
@@ -14,6 +139,7 @@ const Projects = () => {
 
 export default Projects;
 
+// Side Panel Component
 function SidePanel() {
   return (
     <div className="h-[calc(100vh-5rem)] sticky top-22 w-1/4 py-12 px-4 md:px-8 flex flex-col border-r border-neutral-300">
@@ -28,39 +154,30 @@ function SidePanel() {
           View More
         </button>
       </div>
-     
     </div>
   );
 }
 
-function StackPanel() {
+// Stack Panel Component
+function StackPanel({ projectsData }) {
   return (
     <div className="h-full w-3/4">
-      <ProjectSection
-        title="Web Development"
-        bgColor="bg-sky-200"
-        cardTextColor="text-neutral-600"
-      />
-      <ProjectSection
-        title="Data Science"
-        bgColor="bg-orange-200"
-        cardTextColor="text-neutral-600"
-      />
-      <ProjectSection
-        title="Internet of Things"
-        bgColor="bg-red-200"
-        cardTextColor="text-neutral-600"
-      />
-      <ProjectSection
-        title="And more..."
-        bgColor="bg-cyan-200"
-        cardTextColor="text-neutral-600"
-      />
+      {projectsData.map((section, idx) => (
+        <ProjectSection
+          key={idx}
+          title={section.title}
+          bgColor={section.bgColor}
+          microBg={section.microBg}
+          cardTextColor={section.cardTextColor}
+          projects={section.projects}
+        />
+      ))}
     </div>
   );
 }
 
-function ProjectSection({ title, bgColor, cardTextColor }) {
+// Project Section Component
+function ProjectSection({ title, bgColor, microBg, cardTextColor, projects }) {
   return (
     <div
       className={`h-[calc(100vh)] flex flex-col justify-around gap-8 ${bgColor} overflow-hidden`}
@@ -69,10 +186,11 @@ function ProjectSection({ title, bgColor, cardTextColor }) {
         {title}
       </h1>
       <div className="flex gap-5 mb-4 pl-16 overflow-x-scroll">
-        {Array.from({ length: 5 }).map((_, index) => (
+        {projects.map((project, index) => (
           <ProjectCard
             key={index}
-            index={index}
+            project={project}
+            microBg={microBg}
             cardTextColor={cardTextColor}
           />
         ))}
@@ -81,19 +199,27 @@ function ProjectSection({ title, bgColor, cardTextColor }) {
   );
 }
 
-function ProjectCard({ index, cardTextColor }) {
+// Project Card Component
+function ProjectCard({ project, microBg, cardTextColor  }) {
   return (
     <div className="flex items-center justify-between cursor-pointer group">
       <div className="flex flex-col items-center gap-2 rounded-xl bg-white">
-        <div className="h-[21rem] aspect-[4/3] flex flex-col p-1 ">
-          <img src={Img3} alt="" className="object-cover h-60 rounded-xl " />
-          <div className="mt-2 mb-1 flex flex-col gap-0.5">
-            <h2 className="text-xl px-2  font-semibold">Project {index + 1}</h2>
+        <div className="h-[22.3rem] aspect-[4/3] flex flex-col p-1 ">
+          <img src={project.image} alt="" className="object-cover h-60 rounded-xl " />
+          <div className="my-1.5 px-2 flex flex-col gap-2">
+            
+            <h2 className="text-xl  font-semibold">{project.name}</h2>
+            <div className=" flex max-w-fit gap-2 relative ">
+              {project.stack.map((key, i) => (
+                <div className={`text-xs rounded ${microBg} ${cardTextColor} py-0.5 px-1.5  `} key={i}>
+                  {key}
+                </div>
+              ))}
+            </div>
             <p
-              className={`text-[0.8rem] font-inter px-2 leading-4 max-w-md ${cardTextColor}`}
+              className={`text-[0.8rem] font-inter leading-4 max-w-md text-neutral-600`}
             >
-              Brief description of the project. Result which has been achieved
-              through this project.
+              {project.description}
             </p>
           </div>
         </div>

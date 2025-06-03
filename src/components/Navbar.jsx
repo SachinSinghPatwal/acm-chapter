@@ -103,18 +103,18 @@ function SideNavbar({ isOpen, setIsOpen }) {
       <div className="max-w-[100rem] w-full mx-auto flex flex-col gap-4 h-full items-start justify-between pt-2 px-4 sm:px-8">
         <motion.div
           layout
-          className={`w-full min-h-[50%] md:h-[55%] block ${navImage}  rounded-4xl mt-1 md:mt-2 relative`}
+          className={`w-full min-h-[50%] md:h-[55%] block ${navImage}  rounded-2xl mt-1 md:mt-2 relative`}
         >
           <X
             onClick={() => {
               setIsOpen(!isOpen);
               setNavImage("bg-neutral-300");
             }}
-            className=" size-12 md:size-16 p-2 md:p-4 bg-white absolute -top-1 right-0 rounded-bl-2xl cursor-pointer"
+            className=" size-12 md:size-16 p-2 md:p-4 bg-white absolute -top-1 right-0 rounded-bl-xl cursor-pointer"
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-x-20 p-2 w-[90%] h-full md:gap-6 font-medium relative md:-top-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:mt-4 sm:gap-x-20 p-2 w-[90%] h-full md:gap-6 font-medium relative -top-4 ">
           {SideNavLinks.map((link, index) => (
             <motion.NavLink
               onMouseEnter={() => setNavImage(link.img)}
