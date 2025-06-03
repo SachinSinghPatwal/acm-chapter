@@ -58,7 +58,7 @@ export default function HorizontalScroll() {
 function PreviousEventsHeader() {
   return (
     <div className="px-max ">
-      <h1 className="font-black w-fit font-bebas-neue text-5xl sm:text-6xl md:text-[5rem]  relative">
+      <h1 className="font-black w-fit font-bebas-neue text-5xl text-shadow-xs sm:text-6xl md:text-[5rem]  relative">
         <TextAnimate animation="blurIn" as="h1" by="character" delay={0.3}>
           Previous events
         </TextAnimate>
@@ -67,7 +67,7 @@ function PreviousEventsHeader() {
           whileInView={{ width: "100%" }}
           // viewport={{ once: true }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="absolute left-0 bottom-0 h-1 bg-green-500 rounded-full"
+          className="absolute left-0 bottom-0 h-1 bg-blue-500 rounded-full"
         />
       </h1>
     </div>

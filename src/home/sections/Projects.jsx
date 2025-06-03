@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Img3 from "/public/img2.jpg";
+import { TextAnimate } from "../../components/magicui/TextAnimate";
 
 // Data for projects
 const projectsData = [
@@ -11,31 +12,36 @@ const projectsData = [
     projects: [
       {
         name: "Project 1",
-        description: "Brief description of the project. Result which has been achieved through this project.",
+        description:
+          "Brief description of the project. Result which has been achieved through this project.",
         stack: ["React", "Node.js", "Express", "MongoDB", "Gemini API"],
         image: Img3,
       },
       {
         name: "Project 2",
-        description: "Brief description of the project. Result which has been achieved through this project.",
+        description:
+          "Brief description of the project. Result which has been achieved through this project.",
         stack: ["React", "Node.js", "Express", "MongoDB", "Gemini API"],
         image: Img3,
       },
       {
         name: "Project 3",
-        description: "Brief description of the project. Result which has been achieved through this project.",
+        description:
+          "Brief description of the project. Result which has been achieved through this project.",
         stack: ["React", "Node.js", "Express", "MongoDB", "Gemini API"],
         image: Img3,
       },
       {
         name: "Project 4",
-        description: "Brief description of the project. Result which has been achieved through this project.",
+        description:
+          "Brief description of the project. Result which has been achieved through this project.",
         stack: ["React", "Node.js", "Express", "MongoDB", "Gemini API"],
         image: Img3,
       },
       {
         name: "Project 5",
-        description: "Brief description of the project. Result which has been achieved through this project.",
+        description:
+          "Brief description of the project. Result which has been achieved through this project.",
         stack: ["React", "Node.js", "Express", "MongoDB", "Gemini API"],
         image: Img3,
       },
@@ -49,19 +55,22 @@ const projectsData = [
     projects: [
       {
         name: "Project 1",
-        description: "Brief description of the project. Result which has been achieved through this project.",
+        description:
+          "Brief description of the project. Result which has been achieved through this project.",
         stack: ["Python", "Pandas", "NumPy", "Scikit-learn"],
         image: Img3,
       },
       {
         name: "Project 2",
-        description: "Brief description of the project. Result which has been achieved through this project.",
+        description:
+          "Brief description of the project. Result which has been achieved through this project.",
         stack: ["Python", "Pandas", "NumPy", "Scikit-learn"],
         image: Img3,
       },
       {
         name: "Project 3",
-        description: "Brief description of the project. Result which has been achieved through this project.",
+        description:
+          "Brief description of the project. Result which has been achieved through this project.",
         stack: ["Python", "Pandas", "NumPy", "Scikit-learn"],
         image: Img3,
       },
@@ -76,19 +85,22 @@ const projectsData = [
     projects: [
       {
         name: "Project 1",
-        description: "Brief description of the project. Result which has been achieved through this project.",
+        description:
+          "Brief description of the project. Result which has been achieved through this project.",
         stack: ["Arduino", "C++", "Sensors"],
         image: Img3,
       },
       {
         name: "Project 2",
-        description: "Brief description of the project. Result which has been achieved through this project.",
+        description:
+          "Brief description of the project. Result which has been achieved through this project.",
         stack: ["Arduino", "C++", "Sensors"],
         image: Img3,
       },
       {
         name: "Project 3",
-        description: "Brief description of the project. Result which has been achieved through this project.",
+        description:
+          "Brief description of the project. Result which has been achieved through this project.",
         stack: ["Arduino", "C++", "Sensors"],
         image: Img3,
       },
@@ -104,19 +116,22 @@ const projectsData = [
     projects: [
       {
         name: "Project 1",
-        description: "Brief description of the project. Result which has been achieved through this project.",
+        description:
+          "Brief description of the project. Result which has been achieved through this project.",
         stack: ["Other Tech"],
         image: Img3,
       },
       {
         name: "Project 2",
-        description: "Brief description of the project. Result which has been achieved through this project.",
+        description:
+          "Brief description of the project. Result which has been achieved through this project.",
         stack: ["Other Tech"],
         image: Img3,
       },
       {
         name: "Project 3",
-        description: "Brief description of the project. Result which has been achieved through this project.",
+        description:
+          "Brief description of the project. Result which has been achieved through this project.",
         stack: ["Other Tech"],
         image: Img3,
       },
@@ -142,10 +157,13 @@ export default Projects;
 // Side Panel Component
 function SidePanel() {
   return (
-    <div className="h-[calc(100vh-5rem)] sticky top-22 w-1/4 py-12 px-4 md:px-8 flex flex-col border-r border-neutral-300">
-      <h1 className="font-bebas-neue font-black text-4xl sm:text-6xl md:text-[5rem] ">
-        Projects
+    <div className="h-[calc(100vh-5rem)] sticky top-18 w-1/4 py-12 px-4 md:px-8 flex flex-col border-r border-neutral-300  bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
+      <h1 className="font-bebas-neue font-black text-shadow-xs text-4xl sm:text-6xl md:text-[5rem] ">
+        <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}>
+          Projects
+        </TextAnimate>
       </h1>
+
       <div className="flex flex-col mt-2 gap-4">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, est.
@@ -182,8 +200,10 @@ function ProjectSection({ title, bgColor, microBg, cardTextColor, projects }) {
     <div
       className={`h-[calc(100vh)] flex flex-col justify-around gap-8 ${bgColor} overflow-hidden`}
     >
-      <h1 className="font-bebas-neue pl-max font-black text-4xl sm:text-6xl md:text-[5rem] xl:text-8xl">
-        {title}
+      <h1 className="font-bebas-neue pl-max font-black text-4xl sm:text-6xl text-shadow-xs md:text-[5rem] xl:text-8xl">
+        <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}>
+          {title}
+        </TextAnimate>
       </h1>
       <div className="flex gap-5 mb-4 pl-16 overflow-x-scroll">
         {projects.map((project, index) => (
@@ -200,18 +220,30 @@ function ProjectSection({ title, bgColor, microBg, cardTextColor, projects }) {
 }
 
 // Project Card Component
-function ProjectCard({ project, microBg, cardTextColor  }) {
+function ProjectCard({ index, project, microBg, cardTextColor }) {
   return (
-    <div className="flex items-center justify-between cursor-pointer group">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 1 , duration: 0.3, ease: "easeInOut" }}
+      className="flex items-center justify-between cursor-pointer group"
+    >
       <div className="flex flex-col items-center gap-2 rounded-xl bg-white">
         <div className="h-[22.3rem] aspect-[4/3] flex flex-col p-1 ">
-          <img src={project.image} alt="" className="object-cover h-60 rounded-xl " />
+          <img
+            src={project.image}
+            alt=""
+            className="object-cover h-60 rounded-xl "
+          />
           <div className="my-1.5 px-2 flex flex-col gap-2">
-            
             <h2 className="text-xl  font-semibold">{project.name}</h2>
             <div className=" flex max-w-fit gap-2 relative ">
               {project.stack.map((key, i) => (
-                <div className={`text-xs rounded ${microBg} ${cardTextColor} py-0.5 px-1.5  `} key={i}>
+                <div
+                  className={`text-xs rounded ${microBg} ${cardTextColor} py-0.5 px-1.5  `}
+                  key={i}
+                >
                   {key}
                 </div>
               ))}
@@ -224,6 +256,6 @@ function ProjectCard({ project, microBg, cardTextColor  }) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -30,16 +30,16 @@ export default function UpcomingEvents() {
 }
 function UpcomingEventsHeader() {
   return (
-    <h1 className="font-bold w-fit font-bebas-neue text-5xl sm:text-6xl md:text-[5rem] relative">
+    <h1 className="font-bold w-fit font-bebas-neue text-shadow-xs text-5xl sm:text-6xl md:text-[5rem] relative">
       <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}>
         Upcoming events
       </TextAnimate>
       <motion.span
         initial={{ width: 0 }}
         whileInView={{ width: "100%" }}
-        // viewport={{ once: true }}
+        viewport={{ once: true }}
         transition={{ delay: 0.3, duration: 1, ease: "easeInOut" }}
-        className="absolute left-0 bottom-0 h-1 bg-gradient-to-r from-red-600 to-blue-600 rounded-full"
+        className="absolute left-0 bottom-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full"
       />
     </h1>
   );

@@ -4,7 +4,7 @@ const bkgd = "https://i.ibb.co/V95MszS/xim-acm.jpg";
 export default function AboutSection() {
   return (
     <div className=" bg-neutral-50 relative flex flex-col gap-8 md:gap-14 py-10 xl:py-20">
-      <h1 className="text-5xl md:text-7xl w-fit mx-auto font-bebas-neue font-black text-black/85 relative text-center">
+      <h1 className="text-5xl md:text-7xl w-fit mx-auto font-bebas-neue font-black text-black/85 text-shadow-xs relative text-center">
         <motion.span
           initial={{ width: 0 }}
           whileInView={{ width: "150%" }}
