@@ -41,7 +41,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full fixed px-6 sm:px-10 py-8 h-18 flex items-center bg-neutral-50/90 backdrop-blur-lg z-[999] shadow">
+    <div className="w-full fixed px-4 sm:px-10 py-8 h-18 flex items-center bg-neutral-50/90 backdrop-blur-lg z-[999] shadow">
       <div className="w-full max-w-[85rem] mx-auto flex justify-between gap-12 items-center relative">
         <a
           href="/"
@@ -67,7 +67,7 @@ const Navbar = () => {
         <NoticeBoard isOpen={isOpen} />
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="rounded-full bg-neutral-200/80 cursor-pointer p-3.5 relative  flex items-center justify-center"
+          className="rounded-full scale-80 md:scale-100 bg-neutral-200/80 cursor-pointer p-3.5 relative  flex items-center justify-center"
         >
           <Menu />
         </button>
@@ -103,7 +103,7 @@ function SideNavbar({ isOpen, setIsOpen }) {
       <div className="max-w-[100rem] w-full mx-auto flex flex-col gap-4 h-full items-start justify-between pt-2 px-4 sm:px-8">
         <motion.div
           layout
-          className={`w-full h-[50%] block ${navImage}  rounded-4xl md:mt-2 relative`}
+          className={`w-full h-[50%] md:h-[55%] block ${navImage}  rounded-4xl mt-1 md:mt-2 relative`}
         >
           <X
             onClick={() => {
@@ -114,9 +114,9 @@ function SideNavbar({ isOpen, setIsOpen }) {
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-x-20 p-2 w-[90%] md:gap-6 font-medium relative -top-2 md:-top-4">
+        <div className="grid grid-cols- md:grid-cols-2 sm:gap-x-20 p-2 w-[90%] md:gap-6 font-medium relative -top-4 ">
           {SideNavLinks.map((link, index) => (
-            <motion.Link
+            <motion.NavLink
               onMouseEnter={() => setNavImage(link.img)}
               //   onMouseLeave={() => setNavImage("")}
               initial={{ opacity: 0, blur: "50px" }}
@@ -128,7 +128,7 @@ function SideNavbar({ isOpen, setIsOpen }) {
             >
               {link.name}
               <span className="absolute left-0 -bottom-[5px] h-[4.5px] w-0 group-hover:w-full bg-blue-500/80 transtition ease-in-out duration-300"></span>
-            </motion.Link>
+            </motion.NavLink>
           ))}
         </div>
       </div>
