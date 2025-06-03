@@ -20,7 +20,7 @@ export default function HorizontalScroll() {
           className="flex gap-10 3xl:gap-16 h-full w-[100vw] my-16"
         >
           {PastEvents.map((event, i) => (
-            <BlurFade delay={0.3} inView>
+            <BlurFade delay={0.3} key={i} inView>
               <motion.div
                 key={i}
                 whileHover={{ y: -15 }}

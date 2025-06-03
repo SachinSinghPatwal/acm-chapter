@@ -21,7 +21,7 @@ export default function AboutSection() {
           className="h-1 bg-red-500 hidden md:block rounded-full absolute inset-y-0 my-auto right-30 md:right-60"
         />
       </h1>
-      <p className="text-[0.6rem] md:text-sm max-w-[120rem] font-inter mx-auto lg:text-lg xl:text-xl 2xl:text-2xl text-center text-black/70 px-[5dvw]">
+      <p className="text-[0.8rem] md:text-sm max-w-[120rem] font-inter mx-auto lg:text-lg xl:text-xl 2xl:text-2xl text-center text-black/70 px-[5dvw]">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
         doloremque deleniti iste eaque enim voluptatem, ratione est? Sapiente
         eos, earum beatae, temporibus consequuntur unde ad maxime eius corrupti

@@ -23,10 +23,10 @@ const SideNavLinks = [
   { name: "Home", link: "/", img: "bg-red-500" },
   { name: "Events", link: "/events", img: "bg-blue-500" },
   { name: "Team", link: "/team", img: "bg-green-500" },
+  { name: "Projects", link: "/projects", img: "bg-stone-500" },
   { name: "Gallery", link: "/gallery", img: "bg-purple-500" },
   { name: "Newsletter", link: "/newsletter", img: "bg-pink-500" },
   { name: "Contact Us", link: "/contact", img: "bg-lime-500" },
-  { name: "Projects", link: "/projects", img: "bg-stone-500" },
   { name: "FAQ", link: "/faq", img: "bg-yellow-500" },
 ];
 
@@ -103,7 +103,7 @@ function SideNavbar({ isOpen, setIsOpen }) {
       <div className="max-w-[100rem] w-full mx-auto flex flex-col gap-4 h-full items-start justify-between pt-2 px-4 sm:px-8">
         <motion.div
           layout
-          className={`w-full h-[50%] md:h-[55%] block ${navImage}  rounded-4xl mt-1 md:mt-2 relative`}
+          className={`w-full min-h-[50%] md:h-[55%] block ${navImage}  rounded-4xl mt-1 md:mt-2 relative`}
         >
           <X
             onClick={() => {
@@ -114,7 +114,7 @@ function SideNavbar({ isOpen, setIsOpen }) {
           />
         </motion.div>
 
-        <div className="grid grid-cols- md:grid-cols-2 sm:gap-x-20 p-2 w-[90%] md:gap-6 font-medium relative -top-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-x-20 p-2 w-[90%] h-full md:gap-6 font-medium relative md:-top-4 ">
           {SideNavLinks.map((link, index) => (
             <motion.NavLink
               onMouseEnter={() => setNavImage(link.img)}
@@ -124,7 +124,7 @@ function SideNavbar({ isOpen, setIsOpen }) {
               transition={{ duration: 0.6, delay: 0.5 + 0.11 * index }}
               key={index}
               to={link.link}
-              className="group relative text-xl md:text-2xl lg:text-3xl xl:text-5xl md:border-b border-neutral-400/20 py-0.5 w-full md:hover:pl-2 transition-all ease-in-out duration-500 cursor-pointer"
+              className="group relative text-3xl md:text-2xl lg:text-3xl xl:text-5xl md:border-b border-neutral-400/20 py-0.5 w-full md:hover:pl-2 transition-all ease-in-out duration-500 cursor-pointer"
             >
               {link.name}
               <span className="absolute left-0 -bottom-[5px] h-[4.5px] w-0 group-hover:w-full bg-blue-500/80 transtition ease-in-out duration-300"></span>
@@ -148,10 +148,14 @@ function SideNavbar({ isOpen, setIsOpen }) {
   );
 }
 
-function NoticeBoard({isOpen}) {
+function NoticeBoard({ isOpen }) {
   const noticeRef = useRef(null);
   const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0.12, 0.1, 0], ["0%", "100%", "100%"]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0.12, 0.1, 0],
+    ["0%", "100%", "100%"]
+  );
 
   return (
     <motion.div
@@ -160,14 +164,20 @@ function NoticeBoard({isOpen}) {
       viewport={{ once: false }}
       ref={noticeRef}
       style={{ opacity }}
-      className={`fixed top-0 right-48  2xl:right-80 group cursor-pointer scale-80 hidden xl:block lg:scale-100 z-[999] ${isOpen ? "hidden" : "block"} transition-all ease-in-out duration-500`}
+      className={`fixed top-0 right-48  2xl:right-80 group cursor-pointer scale-80 hidden xl:block lg:scale-100 z-[999] ${
+        isOpen ? "hidden" : "block"
+      } transition-all ease-in-out duration-500`}
     >
       <div className="w-fit bg-black relative">
         <motion.div className="flex items-center justify-around p-1  lg:px-3">
           <h1 className="text-white/95 text-xs text-center p-1 relative ">
             Checkout our newsletter
           </h1>
-          <ArrowRight color="white" size={18} className="relative opacity-95 top-[1px]" />
+          <ArrowRight
+            color="white"
+            size={18}
+            className="relative opacity-95 top-[1px]"
+          />
         </motion.div>
       </div>
     </motion.div>
