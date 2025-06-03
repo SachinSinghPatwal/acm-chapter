@@ -3,7 +3,7 @@ import Img3 from "/public/img2.jpg";
 
 const Projects = () => {
   return (
-    <div className="min-h-screen text-2xl w-full">
+    <div className="min-h-screen text-2xl w-full hidden md:block">
       <div className="flex relative border-y border-neutral-300 ">
         <SidePanel />
         <StackPanel />
@@ -24,7 +24,7 @@ function SidePanel() {
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, est.
         </p>
-        <button className=" text-blue-700 text-xl cursor-pointer flex gap-2 items-center ">
+        <button className=" text-blue-700 text-xl  cursor-pointer flex gap-2 items-center ">
           View More
         </button>
       </div>
