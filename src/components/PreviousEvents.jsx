@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { TextAnimate } from "./magicui/TextAnimate";
 import { BlurFade } from "./magicui/BlurFade";
+import { ArrowUpRight } from "lucide-react";
 
 export default function HorizontalScroll() {
   const targetRef = useRef(null);
@@ -11,29 +12,38 @@ export default function HorizontalScroll() {
   const x = useTransform(scrollYProgress, [0, 1], ["30%", "-330%"]);
   return (
     <div ref={targetRef} className="relative h-[600vh]">
-      <div className="sticky flex flex-col justify-between h-[100dvh] top-10 py-16 overflow-hidden">
+      <div className="sticky flex flex-col justify-between h-[100dvh] top-6 lg:top-10 py-16 overflow-hidden">
         {/* title */}
         <PreviousEventsHeader />
         {/* List of events */}
         <motion.div
           style={{ x }}
-          className="flex gap-10 3xl:gap-16 h-full w-[100vw] my-16"
+          className="flex gap-10 3xl:gap-16 h-full w-[100vw] my-10 lg:my-16"
         >
           {PastEvents.map((event, i) => (
-            <BlurFade delay={0.3} inView>
+            <BlurFade delay={0.3} key={i} inView>
               <motion.div
                 key={i}
                 whileHover={{ y: -15 }}
-                className={`w-full h-full relative max-h-[30rem] lg:max-h-[40rem] aspect-video shadow rounded-xl ${event.image} relative cursor-pointer  group `}
+                className={`w-full h-full relative max-h-[25rem] lg:max-h-[26rem] xl:max-h-[40rem] aspect-video shadow rounded-xl   cursor-pointer  group `}
               >
+                <div className={`h-full w-full rounded-xl  ${event.image}`} />
+                
                 <div className="absolute -bottom-20 w-full flex items-center justify-between ">
-                  <p className="font-inter text-[1.6rem] font-bold text-black">
+                  <p className="font-inter text-2xl lg:text-[1.6rem] font-bold text-black">
                     {event.title}
                     <br />
-                    <span className="text-lg relative -top-2 text-neutral-500">
+                    <span className="text-base lg:text-lg relative -top-2 text-neutral-500">
                       {event.date}
                     </span>
                   </p>
+                  <motion.p
+                    initial={{ opacity: 0, y: -40 }}
+                    whileInView={{ opacity: 1, y: -18 }}
+                    className="mr-2  hidden group-hover:flex "
+                  >
+                    <ArrowUpRight className="size-8 " />
+                  </motion.p>
                 </div>
               </motion.div>
             </BlurFade>
@@ -47,7 +57,7 @@ export default function HorizontalScroll() {
 function PreviousEventsHeader() {
   return (
     <div className="px-max ">
-      <h1 className="font-black w-fit font-bebas-neue text-5xl sm:text-6xl md:text-[5rem]  relative">
+      <h1 className="font-black w-fit font-bebas-neue text-5xl text-shadow-xs sm:text-6xl md:text-[5rem]  relative">
         <TextAnimate animation="blurIn" as="h1" by="character" delay={0.3}>
           Previous events
         </TextAnimate>
@@ -56,7 +66,7 @@ function PreviousEventsHeader() {
           whileInView={{ width: "100%" }}
           // viewport={{ once: true }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="absolute left-0 bottom-0 h-1 bg-green-500 rounded-full"
+          className="absolute left-0 bottom-0 h-1 bg-blue-500 rounded-full"
         />
       </h1>
     </div>

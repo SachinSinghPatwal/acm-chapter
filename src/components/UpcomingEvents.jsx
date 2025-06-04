@@ -4,26 +4,24 @@ import mario from "/public/mario.jpg";
 import { motion } from "framer-motion";
 import { TextAnimate } from "./magicui/TextAnimate";
 import { BlurFade } from "./magicui/BlurFade";
+import {  ArrowUpRight } from "lucide-react";
 
 export default function UpcomingEvents() {
   return (
     <div className="px-max">
       <UpcomingEventsHeader />
-      <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 lg:gap-10 my-6 md:my-10">
+      <motion.div className="grid grid-cols-1 lg:grid-cols-2 md:gap-16 lg:gap-8 xl:gap-10 my-6 md:my-10">
         <BlurFade delay={0.3} inView>
           <UpcomingEventCard
             image={arco}
             title="OMG! Arco is here!"
-            gradientFrom="from-neutral-800/10"
-            gradientTo="to-neutral-800/10"
+
           />
         </BlurFade>
         <BlurFade delay={0.45} inView>
           <UpcomingEventCard
             image={mario}
-            title="Marco Polo Drill with Astro"
-            gradientFrom="from-neutral-800/20"
-            gradientTo="to-neutral-800/20"
+            title="Marco Polo Mario"
           />
         </BlurFade>
       </motion.div>
@@ -32,22 +30,22 @@ export default function UpcomingEvents() {
 }
 function UpcomingEventsHeader() {
   return (
-    <h1 className="font-bold w-fit font-bebas-neue text-5xl sm:text-6xl md:text-[5rem] relative">
+    <h1 className="font-bold w-fit font-bebas-neue text-shadow-xs text-5xl sm:text-6xl md:text-[5rem] relative">
       <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}>
         Upcoming events
       </TextAnimate>
       <motion.span
         initial={{ width: 0 }}
         whileInView={{ width: "100%" }}
-        // viewport={{ once: true }}
+        viewport={{ once: true }}
         transition={{ delay: 0.3, duration: 1, ease: "easeInOut" }}
-        className="absolute left-0 bottom-0 h-1 bg-gradient-to-r from-red-600 to-blue-600 rounded-full"
+        className="absolute left-0 bottom-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full"
       />
     </h1>
   );
 }
 
-function UpcomingEventCard({ image, title, gradientFrom, gradientTo }) {
+function UpcomingEventCard({ image, title,}) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -56,9 +54,6 @@ function UpcomingEventCard({ image, title, gradientFrom, gradientTo }) {
       transition={{ duration: 0.5, ease: "easeInOut" }}
       className="grow shrink-0 aspect-video relative cursor-pointer group "
     >
-      <div
-        className={`absolute inset-0 bg-gradient-to-b group-hover:${gradientFrom} group-hover:${gradientTo} transition-all ease-in-out duration-700`}
-      ></div>
       <motion.div className="absolute inset-0 bg-black -z-10 rounded-2xl " />
       <motion.div
         whileHover={{ x: -8, y: -4 }}
@@ -70,10 +65,17 @@ function UpcomingEventCard({ image, title, gradientFrom, gradientTo }) {
           backgroundRepeat: "no-repeat",
         }}
       ></motion.div>
-      <div className="absolute my-1 px-1 md:my-2 w-full flex items-center ">
-        <p className="font-inter text-xl md:text-[2rem] font-bold text-black relative  group-hover:tracking-wide transition-all duration-500">
+      <div className="absolute my-1 px-1 md:my-2 w-full flex items-center justify-between">
+        <p className="font-inter text-2xl lg:text-[2rem] font-bold text-black relative  group-hover:tracking-wide transition-all duration-500">
           {title}
         </p>
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="mr-2  hidden group-hover:flex "
+        >
+          <ArrowUpRight className="size-8 mb-2" />
+        </motion.p>
       </div>
     </motion.div>
   );
