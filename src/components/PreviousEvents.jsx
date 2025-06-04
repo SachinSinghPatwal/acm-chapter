@@ -25,15 +25,16 @@ export default function HorizontalScroll() {
               <motion.div
                 key={i}
                 whileHover={{ y: -15 }}
-                className={`w-full h-full relative max-h-[25rem] lg:max-h-[26rem] xl:max-h-[40rem] aspect-video shadow rounded-xl   cursor-pointer  group `}
+                className={`w-full h-full relative max-h-[25rem] lg:max-h-[26rem] xl:max-h-[40rem] aspect-video rounded-xl cursor-pointer group `}
               >
-                <div className={`h-full w-full rounded-xl  ${event.image}`} />
+                <div className={`h-full w-full rounded-2xl relative group-hover:-top-1.5 group-hover:-left-1.5  ${event.image}`} />
+                <div className="absolute inset-0 bg-black h-full mx-auto w-full rounded-2xl -z-10 " />
                 
                 <div className="absolute -bottom-20 w-full flex items-center justify-between ">
                   <p className="font-inter text-2xl lg:text-[1.6rem] font-bold text-black">
                     {event.title}
                     <br />
-                    <span className="text-base lg:text-lg relative -top-2 text-neutral-500">
+                    <span className="text-base lg:text-lg relative -top-2 text-neutral-800">
                       {event.date}
                     </span>
                   </p>
@@ -57,7 +58,7 @@ export default function HorizontalScroll() {
 function PreviousEventsHeader() {
   return (
     <div className="px-max ">
-      <h1 className="font-black w-fit font-bebas-neue text-5xl text-shadow-xs sm:text-6xl md:text-[5rem]  relative">
+      <h1 className="font-black w-fit font-bebas-neue text-5xl text-shadow-xs sm:text-6xl md:text-[5rem] relative">
         <TextAnimate animation="blurIn" as="h1" by="character" delay={0.3}>
           Previous events
         </TextAnimate>

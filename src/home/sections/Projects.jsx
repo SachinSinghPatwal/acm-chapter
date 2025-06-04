@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Img3 from "/public/img2.jpg";
 import { TextAnimate } from "../../components/magicui/TextAnimate";
+import { ArrowUpRight } from "lucide-react";
 
 // Data for projects
 const projectsData = [
@@ -198,13 +199,20 @@ function StackPanel({ projectsData }) {
 function ProjectSection({ title, bgColor, microBg, cardTextColor, projects }) {
   return (
     <div
-      className={`h-[calc(100vh)] flex flex-col justify-around gap-8 ${bgColor} overflow-hidden`}
+      className={`h-[calc(100vh-1rem)] flex flex-col justify-around gap-8 ${bgColor} overflow-hidden`}
     >
-      <h1 className="font-bebas-neue pl-max font-black text-shadow-xs text-4xl sm:text-6xl  md:text-[5rem] xl:text-8xl">
+      <div className="px-max">
+        <h1 className="font-bebas-neue font-black text-shadow-xs text-4xl sm:text-6xl  md:text-[5rem] xl:text-8xl">
         <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}>
           {title}
         </TextAnimate>
       </h1>
+{/* 
+      <p className="text-base text-neutral-700">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error et nihil atque veritatis repudiandae aperiam ullam doloremque nostrum autem, repellat deserunt unde ipsa perferendis. Harum consectetur accusantium vero! Modi nam ratione reprehenderit, eius maiores rem adipisci. Ipsa voluptatibus cumque quae.
+      </p> */}
+      </div>
+      
       <div className="flex gap-5 mb-4 pl-8 xl:pl-16 overflow-x-scroll">
         {projects.map((project, index) => (
           <ProjectCard
@@ -226,10 +234,11 @@ function ProjectCard({ index, project, microBg, cardTextColor }) {
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ delay: index * 1 , duration: 0.3, ease: "easeInOut" }}
+      transition={{ delay: index * 1, duration: 0.3, ease: "easeInOut" }}
       className="flex items-center justify-between cursor-pointer group"
     >
-      <div className="flex flex-col items-center gap-2 rounded-xl bg-white">
+      <motion.div
+      className="flex flex-col items-center gap-2 rounded-xl bg-white">
         <div className="h-[22.3rem] aspect-[4/3] flex flex-col p-1 ">
           <img
             src={project.image}
@@ -237,7 +246,10 @@ function ProjectCard({ index, project, microBg, cardTextColor }) {
             className="object-cover h-60 rounded-xl "
           />
           <div className="my-1.5 px-2 flex flex-col gap-2">
-            <h2 className="text-xl  font-semibold">{project.name}</h2>
+            <div className="flex justify-between items-center">
+              <h2 className="text-xl  font-semibold">{project.name}</h2>
+              <ArrowUpRight size={22} className="group-hover:block hidden" />
+            </div>
             <div className=" flex max-w-fit gap-2 relative ">
               {project.stack.map((key, i) => (
                 <div
@@ -255,7 +267,7 @@ function ProjectCard({ index, project, microBg, cardTextColor }) {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }
