@@ -4,13 +4,13 @@ import mario from "/public/mario.jpg";
 import { motion } from "framer-motion";
 import { TextAnimate } from "./magicui/TextAnimate";
 import { BlurFade } from "./magicui/BlurFade";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import {  ArrowUpRight } from "lucide-react";
 
 export default function UpcomingEvents() {
   return (
     <div className="px-max">
       <UpcomingEventsHeader />
-      <motion.div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 lg:gap-10 my-6 md:my-10">
+      <motion.div className="grid grid-cols-1 lg:grid-cols-2 md:gap-16 lg:gap-8 xl:gap-10 my-6 md:my-10">
         <BlurFade delay={0.3} inView>
           <UpcomingEventCard
             image={arco}
@@ -66,7 +66,7 @@ function UpcomingEventCard({ image, title,}) {
         }}
       ></motion.div>
       <div className="absolute my-1 px-1 md:my-2 w-full flex items-center justify-between">
-        <p className="font-inter text-xl md:text-[2rem] font-bold text-black relative  group-hover:tracking-wide transition-all duration-500">
+        <p className="font-inter text-2xl lg:text-[2rem] font-bold text-black relative  group-hover:tracking-wide transition-all duration-500">
           {title}
         </p>
         <motion.p

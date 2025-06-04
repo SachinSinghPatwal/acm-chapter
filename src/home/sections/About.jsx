@@ -10,7 +10,7 @@ export default function AboutSection() {
           whileInView={{ width: "150%" }}
           transition={{delay:0.1, duration: 0.5, ease: "easeInOut" }}
           viewport={{ once: true }}
-          className="h-1 bg-red-500 hidden md:block rounded-full absolute inset-y-0 my-auto left-30 md:left-60"
+          className="h-1 bg-red-500 hidden lg:block rounded-full absolute inset-y-0 my-auto left-30 md:left-60"
         />
         <span className="text-orange-500">A</span>BOUT <span className="text-orange-500">U</span>S
         <motion.span
@@ -18,7 +18,7 @@ export default function AboutSection() {
           whileInView={{ width: "150%" }}
           transition={{delay:0.1, duration: 0.5, ease: "easeInOut" }}
           viewport={{ once: true }}
-          className="h-1 bg-red-500 hidden md:block rounded-full absolute inset-y-0 my-auto right-30 md:right-60"
+          className="h-1 bg-red-500 hidden lg:block rounded-full absolute inset-y-0 my-auto right-30 md:right-60"
         />
       </h1>
       <p className="text-[0.8rem] md:text-sm max-w-[120rem] font-inter mx-auto lg:text-lg xl:text-xl 2xl:text-2xl text-center text-black/70 px-[5dvw]">

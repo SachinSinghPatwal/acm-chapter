@@ -3,16 +3,12 @@ import { motion, useMotionValue } from "framer-motion";
 import { TextAnimate } from "./magicui/TextAnimate";
 
 const imgs = [
-  "/public/img.jpg",
-  "/public/img1.jpg",
-  "/public/img2.jpg",
-  "/public/img3.jpg",
-  "/public/savage.jpg",
-  "/public/astro.jpg",
+  "/public/arco.jpg",
+  "/public/mario.jpg",
 ];
 
 const ONE_SECOND = 1000;
-const AUTO_DELAY = ONE_SECOND * 5;
+const AUTO_DELAY = ONE_SECOND * 8;
 const DRAG_BUFFER = 50;
 
 const SPRING_OPTIONS = {
@@ -56,7 +52,7 @@ const SPRING_OPTIONS = {
 
   return (
     <div className="relative overflow-hidden bg-neutral-50 ">
-      <PreviousEventsHeader />
+      <UpcomingEventsHeader />
       <motion.div
         drag="x"
         dragConstraints={{
@@ -124,12 +120,12 @@ const Dots = ({ imgIndex, setImgIndex }) => {
   );
 };
 
-function PreviousEventsHeader() {
+function UpcomingEventsHeader() {
   return (
     <div className="px-max">
       <h1 className="font-black w-fit font-bebas-neue text-5xl text-shadow-xs sm:text-6xl md:text-[5rem] relative">
         <TextAnimate animation="blurIn" as="h1" by="character" delay={0.3}>
-          Previous events
+          Upcoming events
         </TextAnimate>
         <motion.span
           initial={{ width: 0 }}

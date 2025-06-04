@@ -157,18 +157,18 @@ export default Projects;
 // Side Panel Component
 function SidePanel() {
   return (
-    <div className="h-[calc(100vh-5rem)] sticky top-18 w-1/4 py-12 px-4 md:px-8 flex flex-col border-r border-neutral-300  bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
-      <h1 className="font-bebas-neue font-black text-shadow-xs text-4xl sm:text-6xl md:text-[5rem] ">
+    <div className="h-[calc(100vh-5rem)] sticky top-18 w-1/4 py-12 px-4 xl:px-8 flex flex-col border-r border-neutral-300  bg-neutral-50 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
+      <h1 className="font-bebas-neue font-black text-shadow-xs text-5xl lg:text-6xl xl:text-8xl">
         <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}>
           Projects
         </TextAnimate>
       </h1>
 
-      <div className="flex flex-col mt-2 gap-4">
+      <div className="flex flex-col mt-2 gap-4 text-base lg:text-xl xl:text-2xl ">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, est.
         </p>
-        <button className=" text-blue-700 text-xl  cursor-pointer flex gap-2 items-center ">
+        <button className=" text-blue-700 text-lg lg:text-xl  cursor-pointer flex gap-2 items-center ">
           View More
         </button>
       </div>
@@ -200,12 +200,12 @@ function ProjectSection({ title, bgColor, microBg, cardTextColor, projects }) {
     <div
       className={`h-[calc(100vh)] flex flex-col justify-around gap-8 ${bgColor} overflow-hidden`}
     >
-      <h1 className="font-bebas-neue pl-max font-black text-4xl sm:text-6xl text-shadow-xs md:text-[5rem] xl:text-8xl">
+      <h1 className="font-bebas-neue pl-max font-black text-shadow-xs text-4xl sm:text-6xl  md:text-[5rem] xl:text-8xl">
         <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}>
           {title}
         </TextAnimate>
       </h1>
-      <div className="flex gap-5 mb-4 pl-16 overflow-x-scroll">
+      <div className="flex gap-5 mb-4 pl-8 xl:pl-16 overflow-x-scroll">
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
