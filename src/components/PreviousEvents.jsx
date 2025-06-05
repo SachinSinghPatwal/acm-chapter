@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { TextAnimate } from "./magicui/TextAnimate";
 import { BlurFade } from "./magicui/BlurFade";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 export default function HorizontalScroll() {
   const targetRef = useRef(null);
@@ -27,24 +27,25 @@ export default function HorizontalScroll() {
                 whileHover={{ y: -15 }}
                 className={`w-full h-full relative max-h-[25rem] lg:max-h-[26rem] xl:max-h-[40rem] aspect-video rounded-xl cursor-pointer group `}
               >
-                <div className={`h-full w-full rounded-2xl relative group-hover:-top-1.5 group-hover:-left-1.5  ${event.image}`} />
-                <div className="absolute inset-0 bg-black h-full mx-auto w-full rounded-2xl -z-10 " />
-                
-                <div className="absolute -bottom-20 w-full flex items-center justify-between ">
-                  <p className="font-inter text-2xl lg:text-[1.6rem] font-bold text-black">
-                    {event.title}
-                    <br />
-                    <span className="text-base lg:text-lg relative -top-2 text-neutral-800">
+                <div
+                  className={`h-full w-full rounded-2xl relative border-2 group-hover:-top-1.5 group-hover:-left-1.5  ${event.image}`}
+                />
+                <div className="absolute inset-0 bg-black h-full mx-auto w-full rounded-2xl rounded-bl-3xl -z-10 " />
+
+                <div className="absolute -bottom-12 w-full flex items-center justify-between overflow-x-hidden ">
+                  <div className="flex items-center justify-between w-full gap-2">
+                      <p className="font-inter flex gap-2 items-center text-2xl lg:text-[1.6rem] font-bold text-black">
+                        <span className="relative -left-5 hidden group-hover:left-0 group-hover:block ">
+                          <ArrowRight />
+                        </span>
+                        {event.title}
+                      </p>
+
+
+                    <p className="font-inter text-base lg:text-lg relative text-neutral-500 pr-1">
                       {event.date}
-                    </span>
-                  </p>
-                  <motion.p
-                    initial={{ opacity: 0, y: -40 }}
-                    whileInView={{ opacity: 1, y: -18 }}
-                    className="mr-2  hidden group-hover:flex "
-                  >
-                    <ArrowUpRight className="size-8 " />
-                  </motion.p>
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             </BlurFade>

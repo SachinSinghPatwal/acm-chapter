@@ -158,7 +158,7 @@ export default Projects;
 // Side Panel Component
 function SidePanel() {
   return (
-    <div className="h-[calc(100vh-5rem)] sticky top-18 w-1/4 py-12 px-4 xl:px-8 flex flex-col border-r border-neutral-300  bg-neutral-50 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
+    <div className="h-[calc(100vh-5rem)]  sticky top-20 w-1/4 py-12 px-4 xl:px-8 flex flex-col gap-4 border-r border-neutral-300 shadow-r-xl">
       <h1 className="font-bebas-neue w-fit font-black relative text-shadow-xs text-5xl lg:text-6xl xl:text-8xl">
         <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}>
           Projects
@@ -167,11 +167,13 @@ function SidePanel() {
       </h1>
 
       <div className="flex flex-col mt-2 gap-4 text-base lg:text-xl xl:text-2xl ">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, est.
+        <p className="text-neutral-800 font-inter text-lg ">
+          Clean, minimal designs with powerful functionality. Each project
+          represents a commitment to excellence and attention to detail.
         </p>
-        <button className=" text-blue-700 text-lg lg:text-xl w-fit  cursor-pointer flex gap-2 items-center relative">
+        <button className=" text-blue-700 text-lg  w-fit font-inter cursor-pointer flex gap-2 items-center relative">
           View more
+          <ArrowUpRight className="relative" size={18} />
           <span className="w-full h-[1px] absolute bottom-0 bg-blue-700" />
         </button>
       </div>
@@ -203,8 +205,8 @@ function ProjectSection({ title, bgColor, microBg, cardTextColor, projects }) {
     <div
       className={`h-[calc(100vh-1rem)] relative py-20 gap-8 ${bgColor} overflow-hidden`}
     >
-      <div className="px-max">
-        <h1 className="font-bebas-neue font-black text-shadow-xs text-4xl sm:text-6xl  md:text-[5rem] xl:text-8xl">
+      <div className="px-max relative">
+        <h1 className="relative font-bebas-neue font-black text-shadow-xs text-4xl sm:text-6xl md:text-[5rem] xl:text-8xl z-10">
           <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}>
             {title}
           </TextAnimate>
@@ -212,7 +214,7 @@ function ProjectSection({ title, bgColor, microBg, cardTextColor, projects }) {
       </div>
 
       <div className="absolute right-4 xl:right-10 bottom-2 xl:bottom-8 2xl:bottom-12 text-neutral-800 text-base font-inter flex items-center gap-1 ">
-        Scroll to explore <ArrowRight size={16} />{" "}
+        Scroll to explore <ArrowRight size={16} strokeWidth="1.5px" />{" "}
       </div>
 
       <div className="flex gap-5 mb-4 px-8 xl:pl-16 h-full overflow-x-scroll">
@@ -237,23 +239,23 @@ function ProjectCard({ index, project, microBg, cardTextColor }) {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ delay: index * 1, duration: 0.3, ease: "easeInOut" }}
-      className="flex items-center justify-between cursor-pointer group relative"
+      className="flex items-center justify-between relative"
     >
-      <div className="absolute md:h-[20rem] lg:h-[22.3rem] aspect-[4/3] w-full rounded-xl  bg-black" />
+      <div className="absolute md:h-[20rem] lg:h-[22.3rem]  aspect-[4/3] w-full rounded-xl rounded-br-2xl  bg-black   " />
 
-      <motion.div className="flex flex-col items-center gap-2 h-fit rounded-xl bg-white overflow-clip relative hover:-top-1.5 hover:-left-1.5 ">
+      <motion.div className="flex flex-col items-center gap-2 h-fit rounded-xl bg-white overflow-clip relative border-2 -top-1.5 -left-[4.5px] group cursor-pointer">
         <div className="md:h-[20rem] lg:h-[22.3rem]  aspect-[4/3] flex flex-col p-1 ">
           <img
             src={project.image}
             alt=""
             className="object-cover h-full rounded-lg z-10"
           />
-          <div className="my-1 mb-1.5 font-inter px-2 flex flex-col gap-0.5 xl:gap-1 ">
+          <div className="my-1.5 mb-2 font-inter px-2 flex flex-col gap-0.5 xl:gap-1.5 ">
             <div className="flex justify-between items-center relative">
-              <h2 className="text-xl font-semibold">{project.name}</h2>
-              <motion.span className="top-1 xl:top-1.5 right-1 p-1.5 absolute rounded-full bg-neutral-900  text-white/80 transform-all ease-in-out  duration-300">
-                <ArrowUpRight
-                  className={`rotate-0 group-hover:rotate-45   transition-all duration-500 ease-in-out `}
+              <h2 className="text-xl font-semibold flex justify-start gap-1 items-center">  {project.name}</h2>
+              <motion.span className=" right-1  absolute rounded-full text-black/80 transform-all ease-in-out  duration-300">
+                <ArrowUpRight strokeWidth="1.8px"
+                  className={`size-6 rotate-0 group-hover:rotate-45 transition-all duration-300 ease-in-out `}
                 />
               </motion.span>
             </div>

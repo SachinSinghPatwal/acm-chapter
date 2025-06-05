@@ -84,7 +84,7 @@ function UpcomingEventCard({ image, title, description }) {
       <motion.div className="absolute inset-0 bg-neutral-800 -z-10 rounded-2xl " />
       <motion.div
         whileHover={{ x: -8, y: -4 }}
-        className="w-full h-full rounded-xl overflow-clip relative -top-1  "
+        className="w-full h-full rounded-xl border-3 overflow-clip relative -top-1  "
         style={{
           backgroundImage: `url(${image})`,
           backgroundSize: "cover",
