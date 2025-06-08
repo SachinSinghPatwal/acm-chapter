@@ -5,18 +5,18 @@
 * {
     -ms-overflow-style: none;
 }
-
-html{
-    scroll-behavior: smooth;
-}
-
-body{
-    overflow-x: hidden;
-}
-
 ::-webkit-scrollbar {
     display: none;
 }
+
+html {
+  scroll-behavior: smooth;
+
+}
+body {
+  overscroll-behavior: none;
+}
+
 
 
 

@@ -18,7 +18,6 @@ export default Hightlights;
 function HighlightHeader(){
   return(
 <div className="w-full flex items-center gap-4 ">
-    
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,6 +43,7 @@ function HighlightHeader(){
           className="h-1 w-full bg-green-500 rounded-full " />
         </div>
       </div>
-
   )
 }
+
+

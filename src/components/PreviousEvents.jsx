@@ -27,12 +27,11 @@ export default function HorizontalScroll() {
                 whileHover={{ y: -15 }}
                 className={`w-full h-full relative max-h-[25rem] lg:max-h-[26rem] xl:max-h-[40rem] aspect-video rounded-xl cursor-pointer group `}
               >
-                <div
-                  className={`h-full w-full rounded-2xl relative border-2 group-hover:-top-1.5 group-hover:-left-1.5  ${event.image}`}
-                />
+                <div className={`h-full w-full rounded-2xl relative border-2 group-hover:-top-1.5 group-hover:-left-1.5  ${event.image}`}/>
                 <div className="absolute inset-0 bg-black h-full mx-auto w-full rounded-2xl rounded-bl-3xl -z-10 " />
-
+                <p className="absolute hidden group-hover:block -top-10 right-3 text-neutral-500 text-base 2xl:text-lg" >Click to explore</p>
                 <div className="absolute -bottom-12 w-full flex items-center justify-between overflow-x-hidden ">
+                  
                   <div className="flex items-center justify-between w-full gap-2">
                       <p className="font-inter flex gap-2 items-center text-2xl lg:text-[1.6rem] font-bold text-black">
                         <span className="relative -left-5 hidden group-hover:left-0 group-hover:block ">

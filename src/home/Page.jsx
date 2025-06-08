@@ -20,7 +20,6 @@ const Page = () => {
       <Projects/>
       <MeetTeam/>
       <CallToAction/>
-      <Footer/>
       <ScrollProgress/>
     </div>
   );

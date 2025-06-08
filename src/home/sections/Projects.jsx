@@ -145,7 +145,7 @@ const projectsData = [
 const Projects = () => {
   return (
     <div className="min-h-screen text-2xl w-full hidden md:block">
-      <div className="flex relative border-y border-neutral-300 ">
+      <div className="flex relative border-y-[1.5px] border-neutral-900 ">
         <SidePanel />
         <StackPanel projectsData={projectsData} />
       </div>
@@ -158,24 +158,28 @@ export default Projects;
 // Side Panel Component
 function SidePanel() {
   return (
-    <div className="h-[calc(100vh-5rem)]  sticky top-20 w-1/4 py-12 px-4 xl:px-8 flex flex-col gap-4 border-r border-neutral-300 shadow-r-xl">
-      <h1 className="font-bebas-neue w-fit font-black relative text-shadow-xs text-5xl lg:text-6xl xl:text-8xl">
-        <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}>
-          Projects
-        </TextAnimate>
-        <span className="h-6 w-full bg-blue-500/65  absolute bottom-2.5 -z-10" />
-      </h1>
+    <div className="h-[calc(100vh-4.5rem)] sticky top-18 w-1/4 py-8 px-6 flex flex-col gap-4 border-r-[2px] border-y-[1px] border-neutral-900 shadow-r-xl">
+      <div className="relative -top-1 left-1 rounded-xl ">
+        <div className="flex flex-col gap-4 h-[calc(100vh-7.5rem)] bg-neutral-50 py-7 pl-4 pr-5 -top-1.5 -left-1.5 relative rounded-xl ">
+          <h1 className="font-bebas-neue font-black relative text-shadow-xs w-fit z-1 text-5xl lg:text-6xl xl:text-8xl">
+            <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}>
+              Projects
+            </TextAnimate>
+            <span className="h-6 w-full bg-blue-500/65  absolute bottom-2.5 -z-1" />
+          </h1>
 
-      <div className="flex flex-col mt-2 gap-4 text-base lg:text-xl xl:text-2xl ">
-        <p className="text-neutral-800 font-inter text-lg ">
-          Clean, minimal designs with powerful functionality. Each project
-          represents a commitment to excellence and attention to detail.
-        </p>
-        <button className=" text-blue-700 text-lg  w-fit font-inter cursor-pointer flex gap-2 items-center relative">
-          View more
-          <ArrowUpRight className="relative" size={18} />
-          <span className="w-full h-[1px] absolute bottom-0 bg-blue-700" />
-        </button>
+          <div className="flex flex-col bottom-0 gap-4 text-base lg:text-xl xl:text-2xl ">
+            <p className="text-neutral-700 font-inter text-base ">
+              Clean, minimal designs with powerful functionality. Each project
+              represents a commitment to excellence and attention to detail.
+            </p>
+            <button className=" text-blue-700/80 text-lg  w-fit font-inter cursor-pointer flex gap-2 items-center relative">
+              View more
+              <ArrowUpRight className="relative" size={18} />
+              <span className="w-full h-[1px] absolute bottom-0 bg-blue-700/80" />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -203,7 +207,7 @@ function StackPanel({ projectsData }) {
 function ProjectSection({ title, bgColor, microBg, cardTextColor, projects }) {
   return (
     <div
-      className={`h-[calc(100vh-1rem)] relative py-20 gap-8 ${bgColor} overflow-hidden`}
+      className={`h-[calc(100vh-3rem)] relative py-20 gap-8 ${bgColor} overflow-hidden border-y-[1px] border-black`}
     >
       <div className="px-max relative">
         <h1 className="relative font-bebas-neue font-black text-shadow-xs text-4xl sm:text-6xl md:text-[5rem] xl:text-8xl z-10">
@@ -241,20 +245,31 @@ function ProjectCard({ index, project, microBg, cardTextColor }) {
       transition={{ delay: index * 1, duration: 0.3, ease: "easeInOut" }}
       className="flex items-center justify-between relative"
     >
-      <div className="absolute md:h-[20rem] lg:h-[22.3rem]  aspect-[4/3] w-full rounded-xl rounded-br-2xl  bg-black   " />
+      <div className="absolute md:h-[20rem] lg:h-[22.3rem] aspect-[4/3] w-full rounded-xl rounded-br-[0.85rem] bg-black" />
 
-      <motion.div className="flex flex-col items-center gap-2 h-fit rounded-xl bg-white overflow-clip relative border-2 -top-1.5 -left-[4.5px] group cursor-pointer">
+      <motion.div className="flex flex-col items-center gap-2 h-fit rounded-xl bg-white  overflow-clip relative border-2 -top-1.5 -left-[4.5px] group cursor-pointer">
         <div className="md:h-[20rem] lg:h-[22.3rem]  aspect-[4/3] flex flex-col p-1 ">
-          <img
-            src={project.image}
-            alt=""
-            className="object-cover h-full rounded-lg z-10"
-          />
+          <div className=" overflow-hidden rounded-lg h-full w-full relative">
+            <img
+              src={project.image}
+              alt=""
+              className="object-cover h-full group-hover:rotate-1 scale-102 group-hover:scale-105 rounded-lg z-10 transition-all ease-in-out duration-300"
+            />
+          </div>
           <div className="my-1.5 mb-2 font-inter px-2 flex flex-col gap-0.5 xl:gap-1.5 ">
             <div className="flex justify-between items-center relative">
-              <h2 className="text-xl font-semibold flex justify-start gap-1 items-center">  {project.name}</h2>
-              <motion.span className=" right-1  absolute rounded-full text-black/80 transform-all ease-in-out  duration-300">
-                <ArrowUpRight strokeWidth="1.8px"
+              <h2 className="text-xl font-semibold flex justify-start gap-2 items-center">
+                <ArrowRight
+                  strokeWidth="1.7px"
+                  className={`size-6 -left-8 group-hover:left-0  relative group-hover:block  transition-all duration-300 ease-in-out `}
+                />
+                <p className="relative -left-8 group-hover:left-0 transition-all duration-300 ease-in-out ">
+                  {project.name}
+                </p>
+              </h2>
+              <motion.span className=" right-1 group-hover:-right-8 absolute rounded-full text-black/80 transform-all ease-in-out  duration-300">
+                <ArrowUpRight
+                  strokeWidth="1.8px"
                   className={`size-6 rotate-0 group-hover:rotate-45 transition-all duration-300 ease-in-out `}
                 />
               </motion.span>
@@ -262,7 +277,7 @@ function ProjectCard({ index, project, microBg, cardTextColor }) {
             <div className="flex max-w-fit gap-2 relative -top-0.5">
               {project.stack.map((key, i) => (
                 <div
-                  className={`text-xs rounded ${microBg} ${cardTextColor}  px-1.5  `}
+                  className={`text-xs rounded group-hover:shadow  ${microBg} ${cardTextColor}  px-1.5  `}
                   key={i}
                 >
                   {key}
@@ -270,7 +285,7 @@ function ProjectCard({ index, project, microBg, cardTextColor }) {
               ))}
             </div>
             <p
-              className={`text-[0.8rem] font-inter leading-4 max-w-md text-neutral-600`}
+              className={`text-[0.8rem]  font-inter leading-4 max-w-md text-neutral-600 group-hover:text-neutral-800`}
             >
               {project.description}
             </p>
