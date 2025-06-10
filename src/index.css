@@ -31,7 +31,11 @@ body {
 }
 
 .pl-max{
-  @apply pl-4 sm:pl-6 md:pl-8 lg:pl-10 xl:px-16 2xl:pl-24 ;
+  @apply pl-4 sm:pl-6 md:pl-8 lg:pl-10 xl:px-16 2xl:pl-20 ;
+}
+
+.text-heading{
+  @apply text-4xl sm:text-5xl md:text-6xl 2xl:text-8xl font-bold;
 }
 
 /* AuroraText */

@@ -15,7 +15,7 @@ const Events = () => {
         <div className="block md:hidden">
           <UpcomingEventsMobile />
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:block ">
           <PreviousEvents />
         </div>
         <div className="block md:hidden">

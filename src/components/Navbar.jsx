@@ -40,12 +40,21 @@ const Socials = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const { scrollYProgress } = useScroll();
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.998, 0.999],
+    ["100%", "100%", "0%"]
+  );
+
   return (
-    <div className="w-full fixed -0 px-4 sm:px-10 py-8 h-18 flex items-center bg-neutral-50/90 backdrop-blur-lg z-[999] shadow">
+    <motion.div
+      style={{ opacity }}
+    className="w-full fixed px-4 sm:px-10 py-8 h-18 flex items-center bg-neutral-50/90 backdrop-blur-lg z-[999] shadow">
       <div className="w-full max-w-[85rem] mx-auto flex justify-between gap-12 items-center relative">
         <a
           href="/"
-          className="text-3xl xl:text-4xl flex gap-1 font-bold relative  text-black-500/90 "
+          className="text-3xl xl:text-4xl flex gap-1 font-bold relative text-black-500/90 "
         >
           <h1>ACM</h1>
           <div>
@@ -74,7 +83,7 @@ const Navbar = () => {
       </div>
 
       <SideNavbar isOpen={isOpen} setIsOpen={setIsOpen} />
-    </div>
+    </motion.div>
   );
 };
 

@@ -29,7 +29,7 @@ const events = [
 // 2. Main UpcomingEvents component
 export default function UpcomingEvents() {
   return (
-    <div className="px-max">
+    <div className="px-max ">
       <UpcomingEventsHeader />
       <UpcomingEventList events={events} />
     </div>
@@ -39,7 +39,7 @@ export default function UpcomingEvents() {
 // 3. Header component
 function UpcomingEventsHeader() {
   return (
-    <h1 className="font-bold w-fit font-bebas-neue text-shadow-xs text-5xl sm:text-6xl md:text-[5rem] relative">
+    <h1 className="font-bold w-fit font-bebas-neue text-shadow-xs text-heading relative">
       <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}>
         Upcoming events
       </TextAnimate>
@@ -57,7 +57,7 @@ function UpcomingEventsHeader() {
 // 4. List component
 function UpcomingEventList({ events }) {
   return (
-    <motion.div className="grid grid-cols-1 lg:grid-cols-2 md:gap-16 lg:gap-8 xl:gap-10 my-6 md:my-10">
+    <motion.div className="grid grid-cols-1 lg:grid-cols-2 md:gap-16 lg:gap-8 xl:gap-10 my-6 md:my-10 xl:my-14">
       {events.map((event) => (
         <BlurFade key={event.id} delay={event.delay} inView>
           <UpcomingEventCard
@@ -92,9 +92,9 @@ function UpcomingEventCard({ image, title, description }) {
           backgroundRepeat: "no-repeat",
         }}
       ></motion.div>
-      <div className="absolute my-1 md:my-2 w-full">
+      <div className="absolute my-1 md:my-3 w-full">
         <div className=" flex items-center justify-between">
-          <p className="font-inter text-2xl lg:text-[2rem] font-bold text-black relative  transition-all duration-500">
+          <p className="font-inter text-xl xl:text-2xl font-bold text-black relative  transition-all duration-500">
             {title}
           </p>
           <motion.p
@@ -102,10 +102,10 @@ function UpcomingEventCard({ image, title, description }) {
             whileInView={{ opacity: 1, y: 0 }}
             className="mr-2  hidden group-hover:flex "
           >
-            <ArrowUpRight className="size-8 mb-2" />
+            <ArrowUpRight className="size-6 mb-2" />
           </motion.p>
         </div>
-        <p className="text-neutral-700 text-base hidden group-hover:block">
+        <p className="text-neutral-600 text-xs xl:text-sm 2xl:text-base hidden group-hover:block">
           {description}
         </p>
       </div>

@@ -6,10 +6,10 @@ import { NavLink } from "react-router";
 const Footer = () => {
   return (
     <div className="">
-      <div className="mb-[calc(100vh-7rem)]"></div>
+      <div className="mb-[calc(100vh-4rem)]"></div>
 
-      <div className="h-[calc(100vh-7rem)] grid grid-rows-6 w-full fixed bottom-0 bg-neutral-950 text-neutral-400/90  -z-10 px-max ">
-        <div className="row-span-5 border-y-2 border-neutral-800">
+      <div className="h-[calc(100vh-4rem)] grid grid-rows-6 w-full fixed bottom-0 bg-neutral-950 text-neutral-400/90 -z-10 px-max ">
+        <div className="row-span-5 pt-4 border-y-2 border-neutral-800">
           <FooterComponent />
         </div>
         <div className="row-span-1">
@@ -24,7 +24,7 @@ export default Footer;
 
 function FooterComponent() {
   return (
-    <div className="w-full text-base grid grid-cols-4 py-20 font-inter ">
+    <div className="w-full text-xs lg:text-sm 2xl:text-lg grid grid-cols-4 py-10 2xl:py-20 font-inter ">
       {/* LOGO */}
       <div className="h-full w-full col-span-1 text-blue-500 text-6xl font-bebas-neue ">
         ACM <span className="text-neutral-100">XIM </span>{" "}
@@ -88,18 +88,18 @@ function FooterComponent() {
 
 function FooterComponent2() {
   return (
-    <div className="h-full w-full flex justify-between items-center font-inter text-lg ">
+    <div className="h-full w-full flex justify-between items-center font-inter text-xs lg:text-sm 2xl:text-base ">
       {/* SOCIALS */}
-      <div className="flex gap-6">
+      <div className="flex gap-5">
         <div>Follow us: </div>
         <div className="text-neutral-100">
-          <Instagram size={28} />
+          <Instagram size={20} />
         </div>
         <div className="text-neutral-100">
-          <Twitter size={28} />
+          <Twitter size={20} />
         </div>
         <div className="text-neutral-100">
-          <Linkedin size={28} />
+          <Linkedin size={20} />
         </div>
       </div>
 
