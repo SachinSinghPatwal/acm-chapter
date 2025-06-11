@@ -41,7 +41,7 @@ function UpcomingEventsHeader() {
   return (
     <h1 className="font-bold w-fit font-bebas-neue text-shadow-xs text-heading relative">
       <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}>
-        Upcoming events
+        Upcoming events 
       </TextAnimate>
       <motion.span
         initial={{ width: 0 }}

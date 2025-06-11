@@ -27,7 +27,7 @@ body {
 
 /* CUSTOM TAILWIND CLASSES */
 .px-max{
-  @apply px-4 sm:px-6 md:px-8 lg:px-10 xl:px-16 2xl:px-24 ;
+  @apply px-4 sm:px-6 md:px-8 lg:px-10 xl:px-16 2xl:px-20 ;
 }
 
 .pl-max{
@@ -35,7 +35,7 @@ body {
 }
 
 .text-heading{
-  @apply text-4xl sm:text-5xl md:text-6xl 2xl:text-8xl font-bold;
+  @apply text-4xl sm:text-5xl md:text-6xl 2xl:text-[5rem] font-bold;
 }
 
 /* AuroraText */

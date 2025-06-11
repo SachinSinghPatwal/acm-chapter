@@ -43,7 +43,7 @@ const Navbar = () => {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.998, 0.999],
+    [0, 0.9938, 0.994],
     ["100%", "100%", "0%"]
   );
 
@@ -162,7 +162,7 @@ function NoticeBoard({ isOpen }) {
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(
     scrollYProgress,
-    [0.12, 0.1, 0],
+    [0.06, 0.05, 0],
     ["0%", "100%", "100%"]
   );
 

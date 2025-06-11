@@ -1,7 +1,18 @@
 import { motion } from "framer-motion";
 import Img3 from "/public/img1.jpg";
 import { TextAnimate } from "../../components/magicui/TextAnimate";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Bot,
+  Calendar,
+  ChartColumnStacked,
+  Monitor,
+  Satellite,
+  Smartphone,
+  Star,
+  Users,
+} from "lucide-react";
 import { useState } from "react";
 
 // Data for projects
@@ -9,8 +20,8 @@ const projectsData = [
   {
     title: "Web Development",
     bgColor: "bg-sky-200",
-    microBg: "bg-blue-100",
-    cardTextColor: "text-blue-600",
+    microBg: "bg-blue-50",
+    cardTextColor: "text-blue-500",
     projects: [
       {
         name: "Project 1 - This Scenery is Beautiful",
@@ -52,8 +63,8 @@ const projectsData = [
   {
     title: "Data Science",
     bgColor: "bg-orange-200",
-    microBg: "bg-orange-100",
-    cardTextColor: "text-orange-600",
+    microBg: "bg-orange-50",
+    cardTextColor: "text-orange-500",
     projects: [
       {
         name: "Project 1 - This Scenery is Beautiful",
@@ -82,8 +93,8 @@ const projectsData = [
   {
     title: "Internet of Things",
     bgColor: "bg-red-200",
-    microBg: "bg-red-100",
-    cardTextColor: "text-red-600",
+    microBg: "bg-red-50",
+    cardTextColor: "text-red-500",
     projects: [
       {
         name: "Project 1 - This Scenery is Beautiful",
@@ -113,8 +124,8 @@ const projectsData = [
   {
     title: "And more...",
     bgColor: "bg-cyan-200",
-    microBg: "bg-cyan-100",
-    cardTextColor: "text-cyan-600",
+    microBg: "bg-cyan-50",
+    cardTextColor: "text-cyan-600/80",
     projects: [
       {
         name: "Project 1 - This Scenery is Beautiful",
@@ -161,19 +172,17 @@ function SidePanel() {
   return (
     <div className="h-[calc(100vh-4.5rem)] sticky top-18 w-1/4  border-r-[2px] border-y-[1px] border-neutral-900 shadow-r-xl">
       <div className="relative rounded-xl ">
-        <div className="flex flex-col gap-6 2xl:gap-10 h-[calc(100vh-5.5rem)] mx-2 2xl:my-2 bg-neutral-50 text-neutral-950 py-10 px-6  relative rounded-xl ">
+        <div className="flex flex-col gap-6 h-[calc(100vh-5.5rem)] mx-2 2xl:my-2 bg-neutral-50 text-neutral-950 py-10 px-6  relative rounded-xl ">
           <h1 className="font-bebas-neue font-black relative text-shadow-xs w-fit z-1 text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
-            <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}>
-              Projects
-            </TextAnimate>
-            <span className="h-4 w-full bg-blue-600/65  absolute bottom-2 -z-1" />
+            {/* <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}> */}
+            <span className="text-black">Featured</span> <br />
+            <span className="text-blue-500">Projects</span>
+            {/* </TextAnimate> */}
+            {/* <span className="h-4 w-full bg-blue-500/65  absolute bottom-2 -z-1" /> */}
           </h1>
 
-          <p className="text-neutral-800 text-sm xl:text-lg mb-2">
-            Explore a diverse collection of projects that blend creativity and
-            technology, solving real-world challenges and showcasing innovation
-            across domains:
-            <ul className="list-none flex flex-col cursor-pointer mt-2 gap-1 w-fit">
+          <p className="text-neutral-800 text-sm xl:text-xl mb-6 font-inter relative">
+            <ul className="list-none flex flex-col cursor-pointer gap-5 w-fit">
               <a className="ml-0 hover:ml-1 group flex ">
                 <motion.span
                   whileHover={{ x: 2 }}
@@ -187,7 +196,9 @@ function SidePanel() {
                   {"->"}
                 </motion.span>{" "}
                 &nbsp;{" "}
-                <span className="hover:text-blue-600">🖥️ Web Development</span>
+                <span className="flex items-center gap-4 ">
+                  <Monitor size={18} /> Web Development
+                </span>
               </a>
               <a className="hover:ml-1  group flex">
                 <motion.span
@@ -202,9 +213,11 @@ function SidePanel() {
                   {"->"}
                 </motion.span>{" "}
                 &nbsp;{" "}
-                <span className="hover:text-blue-600">📱 App Development</span>
+                <span className="flex items-center gap-4 ">
+                  <Smartphone size={18} /> App Development
+                </span>
               </a>
-              <a className="hover:ml-1 hover:text-blue-600 group flex">
+              <a className="hover:ml-1  group flex">
                 <motion.span
                   whileHover={{ x: 2 }}
                   transition={{
@@ -217,7 +230,9 @@ function SidePanel() {
                   {"->"}
                 </motion.span>{" "}
                 &nbsp;{" "}
-                <span className="hover:text-blue-600">📊 Data Science</span>
+                <span className="flex items-center gap-4 ">
+                  <ChartColumnStacked size={18} /> Data Science
+                </span>
               </a>
               <a className="hover:ml-1 group flex">
                 <motion.span
@@ -231,7 +246,10 @@ function SidePanel() {
                 >
                   {"->"}
                 </motion.span>{" "}
-                &nbsp; <span className="hover:text-blue-600 ">🤖 AI/ML</span>
+                &nbsp;{" "}
+                <span className="flex items-center gap-4  ">
+                  <Bot size={18} /> AI/ML
+                </span>
               </a>
               <a className="hover:ml-1  group flex">
                 <motion.span
@@ -246,8 +264,8 @@ function SidePanel() {
                   {"->"}
                 </motion.span>{" "}
                 &nbsp;{" "}
-                <span className="hover:text-blue-600">
-                  🛰️ Internet of Things
+                <span className="flex items-center gap-4 ">
+                  <Satellite size={18} /> Internet of Things
                 </span>
               </a>
               <a className="group flex hover:text-neutral-900">
@@ -259,7 +277,7 @@ function SidePanel() {
 
           <button className="group bg-neutral-950 text-neutral-100 text-sm xl:text-lg px-1 pl-5 py-1 rounded-4xl w-fit cursor-pointer flex justify-between gap-6 items-center relative">
             <span className="relative -top-[1px]">Go to projects page</span>
-            <span className=" bg-[#6593FA] rounded-full p-1 size-8 overflow-hidden">
+            <span className=" bg-[#73aaff] rounded-full p-1 size-8 overflow-hidden">
               <ArrowUpRight
                 className="relative text-black bottom-0 left-0 group-hover:bottom-5 group-hover:left-4.5 transition-all duration-300 ease-in-out"
                 size={24}
@@ -338,50 +356,64 @@ function ProjectCard({ index, project, microBg, cardTextColor }) {
       transition={{ delay: index * 1, duration: 0.3, ease: "easeInOut" }}
       className="flex flex-col items-center gap-2 h-fit rounded-xl bg-white  overflow-clip relative border-2 group cursor-pointer"
     >
-      <div className=" flex flex-col p-1 ">
-        <div className="h-full w-[26rem] aspect-video overflow-hidden rounded-lg relative">
+      <div className=" flex flex-col p-1">
+        <div className="h-full w-[30rem] aspect-video overflow-hidden rounded-lg relative">
           <img
             src={project.image}
             alt=""
             className="object-cover h-full group-hover:rotate-1 scale-100 group-hover:scale-103 rounded-lg z-10 transition-all ease-in-out duration-300"
           />
         </div>
-        <div className="my-1.5 mb-2 font-inter px-1.5 flex flex-col gap-0.5 xl:gap-1.5">
+        <div className="my-2 font-inter px-1.5 flex flex-col gap-0.5 xl:gap-3">
           <div className="flex justify-between items-center relative">
             <h2 className="text-xl font-semibold flex justify-start gap-2 items-center">
               <ArrowRight
                 strokeWidth="1.7px"
-                className={`size-6 -left-8 group-hover:left-0  relative group-hover:block  transition-all duration-300 ease-in-out `}
+                className={`size-6 -left-12 group-hover:left-0  relative group-hover:block  transition-all duration-300 ease-in-out `}
               />
               <p className="relative -left-8 group-hover:left-0 transition-all duration-300 ease-in-out ">
                 {project.name}
               </p>
             </h2>
-            <motion.span className=" right-1 group-hover:-right-8 absolute rounded-full text-black/80 transform-all ease-in-out  duration-300">
+            <motion.span className=" right-1 group-hover:-right-12 absolute rounded-full text-black/80 transform-all ease-in-out  duration-300">
               <ArrowUpRight
                 strokeWidth="1.8px"
                 className={`size-6 rotate-0 group-hover:rotate-45 transition-all duration-300 ease-in-out `}
               />
             </motion.span>
           </div>
-          <div className="flex max-w-fit gap-2 relative ">
+
+          <p className={`text-sm max-w-md text-neutral-500`}>
+            {project.description}
+          </p>
+
+          <div className="flex max-w-fit gap-2 ">
             {project.stack.map((key, i) => (
               <div
-                className={`h-fit text-xs rounded group-hover:shadow  ${microBg} ${cardTextColor}  px-1.5  `}
+                className={`h-fit text-xs rounded-xl  ${microBg} ${cardTextColor} py-0.5  px-3  `}
                 key={i}
               >
                 {key}
               </div>
             ))}
           </div>
-          <p
-            className={`text-xs font-inter leading-4 max-w-md text-neutral-600 group-hover:text-neutral-700`}
-          >
-            {project.description}
-          </p>
+
+          <div className="flex justify-between text-sm px-2 text-neutral-500">
+            <span className="flex gap-4">
+              <p className="flex gap-2">
+                <Star size={16} /> 8
+              </p>
+              <p className="flex gap-2">
+                <Users size={16} /> 5
+              </p>
+            </span>
+
+            <p className="flex gap-2">
+              <Calendar size={16} /> 5 months ago
+            </p>
+          </div>
         </div>
       </div>
-      <div className="absolute -z-10 md:h-[20rem] lg:h-[23.3rem] aspect-[16/13] w-full rounded-xl rounded-br-[0.85rem] bg-black" />
     </motion.div>
   );
 }

@@ -1,5 +1,6 @@
 import Hero from "./sections/Hero";
 import About from "./sections/About";
+import AboutMore from "./sections/AboutMore";
 import Hightlights from "./sections/Hightlights";
 import Events from "./sections/Events";
 import Projects from "./sections/Projects";
@@ -15,6 +16,7 @@ const Page = () => {
     <div className="relative">
       <Hero />
       <About />
+      <AboutMore />
       <Hightlights/>
       <Events/>
       <Projects/>
