@@ -29,7 +29,7 @@ const events = [
 // 2. Main UpcomingEvents component
 export default function UpcomingEvents() {
   return (
-    <div className="px-max ">
+    <div className="px-max mt-10 ">
       <UpcomingEventsHeader />
       <UpcomingEventList events={events} />
     </div>
@@ -81,10 +81,10 @@ function UpcomingEventCard({ image, title, description }) {
       transition={{ duration: 0.5, ease: "easeInOut" }}
       className="grow shrink-0 aspect-video relative cursor-pointer group "
     >
-      <motion.div className="absolute inset-0 bg-neutral-800 -z-10 rounded " />
+      <motion.div className="absolute inset-0 bg-neutral-800 -z-10 rounded-lg " />
       <motion.div
         whileHover={{ x: -9, y: -5 }}
-        className="w-full h-full rounded overflow-clip relative -top-1  "
+        className="w-full h-full rounded-lg overflow-clip relative -top-1  "
         style={{
           backgroundImage: `url(${image})`,
           backgroundSize: "cover",

@@ -8,7 +8,7 @@ import {
   YoutubeIcon,
   ArrowRight,
 } from "lucide-react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const Links = [
@@ -63,14 +63,14 @@ const Navbar = () => {
         </a>
         <div className=" hidden lg:flex relative gap-6 -left-10 top-1">
           {Links.map((link, index) => (
-            <Link
+            <NavLink
               key={index}
               to={link.link}
               className="text-sm tracking-wide font-inter text-black/80 group transition ease-in-out duration-300 relative px-3"
             >
               {link.name}
               <span className="absolute left-0 w-0 h-0.5 group-hover:w-full -bottom-1 bg-blue-500/90 transtition ease-in-out duration-300"></span>
-            </Link>
+            </NavLink>
           ))}
         </div>
         <NoticeBoard isOpen={isOpen} />
@@ -125,19 +125,19 @@ function SideNavbar({ isOpen, setIsOpen }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 md:mt-4 sm:gap-x-20 p-2 w-[90%] h-full md:gap-6 font-medium relative -top-4 ">
           {SideNavLinks.map((link, index) => (
-            <motion.NavLink
+            <motion.a
               onMouseEnter={() => setNavImage(link.img)}
               //   onMouseLeave={() => setNavImage("")}
               initial={{ opacity: 0, blur: "50px" }}
               whileInView={{ opacity: 1, blur: "0px" }}
               transition={{ duration: 0.6, delay: 0.5 + 0.11 * index }}
               key={index}
-              to={link.link}
+              href={link.link}
               className="group relative text-3xl md:text-2xl lg:text-3xl xl:text-5xl md:border-b border-neutral-400/20 py-0.5 w-full md:hover:pl-2 transition-all ease-in-out duration-500 cursor-pointer"
             >
               {link.name}
               <span className="absolute left-0 -bottom-[5px] h-[4.5px] w-0 group-hover:w-full bg-blue-500/80 transtition ease-in-out duration-300"></span>
-            </motion.NavLink>
+            </motion.a>
           ))}
         </div>
       </div>

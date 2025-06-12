@@ -25,29 +25,29 @@ export default function HorizontalScroll() {
               <motion.div
                 key={i}
                 whileHover={{ y: -15 }}
-                className={`w-full h-full 2xl:h-96 relative aspect-video rounded-xl cursor-pointer group `}
+                className={`w-full h-full  relative aspect-video  cursor-pointer group `}
               >
                 <img
                   src={event.image}
-                  className={`h-full w-full rounded relative  group-hover:-top-2 group-hover:-left-2  ${event.image}`}
+                  className={`h-full w-full rounded-lg relative group-hover:-top-2 group-hover:-left-2  ${event.image}`}
                 />
-                <div className="absolute inset-0 bg-black h-full mx-auto w-full rounded -z-10 " />
+                <div className="absolute inset-0 bg-black h-full mx-auto w-full rounded-lg -z-10 " />
                 <p className="absolute hidden group-hover:block -top-6 xl:-top-8 right-3 text-neutral-500 text-xs xl:text-sm">
                   Click to explore
                 </p>
                 <div className="relative top-3 w-full overflow-x-hidden ">
                   <div className="flex items-center justify-between w-full gap-2">
-                    <p className="font-inter flex gap-2 items-center text-lg xl:text-2xl font-bold text-black">
+                    <p className="font-inter flex gap-2 items-center text-lg xl:text-2xl 2xl:text-3xl font-bold text-black">
                       <span className="relative -left-5 hidden group-hover:left-0 group-hover:block ">
                         <ArrowRight />
                       </span>
                       {event.title}
                     </p>
-                    <p className="font-inter text-xs xl:text-base relative text-neutral-700 pr-1 flex  gap-1">
+                    <p className="font-inter text-xs xl:text-base 2xl:text-xl relative text-neutral-600/90 pr-1 flex  gap-1">
                       {event.date}
                     </p>
                   </div>
-                  <p className=" text-xs xl:text-sm  text-neutral-700 hidden group-hover:block">
+                  <p className=" text-xs lg:text-sm mt-0.5 2xl:text-base text-neutral-600/90 hidden group-hover:block">
                     {event.description}
                   </p>
                 </div>

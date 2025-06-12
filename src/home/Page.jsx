@@ -5,8 +5,7 @@ import Hightlights from "./sections/Hightlights";
 import Events from "./sections/Events";
 import Projects from "./sections/Projects";
 import MeetTeam from "./sections/MeetTeam";
-import Footer from "./sections/Footer";
-import CallToAction from "./sections/CallToAction";
+import Newsletter from "./sections/Newsletter";
 
 import ScrollProgress from "../lib/ScrollProgress";
 
@@ -21,7 +20,7 @@ const Page = () => {
       <Events/>
       <Projects/>
       <MeetTeam/>
-      <CallToAction/>
+      <Newsletter/>
       <ScrollProgress/>
     </div>
   );
