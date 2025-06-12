@@ -157,7 +157,7 @@ const projectsData = [
 const Projects = () => {
   return (
     <div className="min-h-screen text-2xl w-full hidden md:block">
-      <div className="flex relative border-y-[1.5px] border-neutral-900 ">
+      <div className="flex relative  ">
         <SidePanel />
         <StackPanel projectsData={projectsData} />
       </div>
@@ -170,7 +170,7 @@ export default Projects;
 // Side Panel Component
 function SidePanel() {
   return (
-    <div className="h-[calc(100vh-4.5rem)] sticky top-18 w-1/4  border-r-[2px] border-y-[1px] border-neutral-900 shadow-r-xl">
+    <div className="h-[calc(100vh-4.5rem)] sticky top-18 w-1/4  shadow-r-xl bg-blue-500">
       <div className="relative rounded-xl ">
         <div className="flex flex-col gap-6 h-[calc(100vh-5.5rem)] mx-2 2xl:my-2 bg-neutral-50 text-neutral-950 py-10 px-6  relative rounded-xl ">
           <h1 className="font-bebas-neue font-black relative text-shadow-xs w-fit z-1 text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
@@ -318,7 +318,7 @@ function StackPanel({ projectsData }) {
 function ProjectSection({ title, bgColor, microBg, cardTextColor, projects }) {
   return (
     <div
-      className={`min-h-[calc(100vh-3rem)] flex flex-col gap-8 justify-between relative py-8 xl:py-16  ${bgColor} overflow-hidden border-y-[1px] border-black`}
+      className={`min-h-[calc(100vh-3rem)] flex flex-col gap-8 justify-between relative py-8 xl:py-16  ${bgColor} overflow-hidden`}
     >
       <div className="pl-max 2xl:-left-4 relative">
         <h1 className="relative font-bebas-neue font-black text-shadow-xs text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl z-10">
@@ -332,7 +332,7 @@ function ProjectSection({ title, bgColor, microBg, cardTextColor, projects }) {
         Scroll to explore <ArrowRight size={16} strokeWidth="1.5px" />{" "}
       </div>
 
-      <div className="flex gap-5 mb-4 px-8 xl:pl-16  overflow-x-scroll">
+      <div className="flex gap-5 mb-2 px-8 xl:pl-16  overflow-x-scroll">
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
@@ -354,17 +354,17 @@ function ProjectCard({ index, project, microBg, cardTextColor }) {
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ delay: index * 1, duration: 0.3, ease: "easeInOut" }}
-      className="flex flex-col items-center gap-2 h-fit rounded-xl bg-white  overflow-clip relative border-2 group cursor-pointer"
+      className="flex flex-col items-center gap-2  rounded-lg bg-white overflow-clip relative group cursor-pointer"
     >
       <div className=" flex flex-col p-1">
-        <div className="h-full w-[30rem] aspect-video overflow-hidden rounded-lg relative">
+        <div className="h-full w-[30rem] aspect-video overflow-hidden rounded-md relative">
           <img
             src={project.image}
             alt=""
-            className="object-cover h-full group-hover:rotate-1 scale-100 group-hover:scale-103 rounded-lg z-10 transition-all ease-in-out duration-300"
+            className="object-cover h-full hover:rotate-1 scale-100 hover:scale-103 z-10 transition-all ease-in-out duration-300"
           />
         </div>
-        <div className="my-2 font-inter px-1.5 flex flex-col gap-0.5 xl:gap-3">
+        <div className="my-2 font-inter px-1.5 flex flex-col gap-0.5 xl:gap-1">
           <div className="flex justify-between items-center relative">
             <h2 className="text-xl font-semibold flex justify-start gap-2 items-center">
               <ArrowRight
@@ -398,7 +398,7 @@ function ProjectCard({ index, project, microBg, cardTextColor }) {
             ))}
           </div>
 
-          <div className="flex justify-between text-sm px-2 text-neutral-500">
+          <div className="relative top-1 flex justify-between text-sm px-2 text-neutral-500">
             <span className="flex gap-4">
               <p className="flex gap-2">
                 <Star size={16} /> 8

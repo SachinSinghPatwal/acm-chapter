@@ -81,10 +81,10 @@ function UpcomingEventCard({ image, title, description }) {
       transition={{ duration: 0.5, ease: "easeInOut" }}
       className="grow shrink-0 aspect-video relative cursor-pointer group "
     >
-      <motion.div className="absolute inset-0 bg-neutral-800 -z-10 rounded-2xl " />
+      <motion.div className="absolute inset-0 bg-neutral-800 -z-10 rounded " />
       <motion.div
-        whileHover={{ x: -8, y: -4 }}
-        className="w-full h-full rounded-xl border-3 overflow-clip relative -top-1  "
+        whileHover={{ x: -9, y: -5 }}
+        className="w-full h-full rounded overflow-clip relative -top-1  "
         style={{
           backgroundImage: `url(${image})`,
           backgroundSize: "cover",
