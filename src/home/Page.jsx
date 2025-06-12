@@ -8,6 +8,7 @@ import MeetTeam from "./sections/MeetTeam";
 import Newsletter from "./sections/Newsletter";
 
 import ScrollProgress from "../lib/ScrollProgress";
+import Gallery from "./sections/Gallery";
 
 const Page = () => { 
 
@@ -20,6 +21,7 @@ const Page = () => {
       <Events/>
       <Projects/>
       <MeetTeam/>
+      <Gallery/>
       <Newsletter/>
       <ScrollProgress/>
     </div>

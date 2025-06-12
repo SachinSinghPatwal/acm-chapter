@@ -35,7 +35,7 @@ body {
 }
 
 .text-heading{
-  @apply text-4xl sm:text-5xl md:text-6xl 2xl:text-[5rem] font-bold;
+  @apply text-4xl sm:text-5xl md:text-6xl xl:text-8xl 2xl:text-[5rem] font-bold;
 }
 
 /* AuroraText */
@@ -79,5 +79,17 @@ body {
     to {
       background-position: 0% 0%;
     }
+  }
+}
+
+@layer base {
+  .font-outline-1 {
+    -webkit-text-stroke: 0.5px #2b7fff;
+  }
+  .font-outline-2 {
+    -webkit-text-stroke: 1px #2b7fff;
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 2px #2b7fff;
   }
 }

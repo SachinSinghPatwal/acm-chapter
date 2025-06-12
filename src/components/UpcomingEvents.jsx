@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import arco from "/public/arco.jpg";
 import mario from "/public/mario.jpg";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { TextAnimate } from "./magicui/TextAnimate";
 import { BlurFade } from "./magicui/BlurFade";
 import { ArrowUpRight } from "lucide-react";
@@ -28,9 +28,22 @@ const events = [
 
 // 2. Main UpcomingEvents component
 export default function UpcomingEvents() {
+  const targetRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+      target: targetRef,
+      offset: ["start end", "end start"],
+    });
+    const x = useTransform(scrollYProgress, [0, 1], ["20%", "-100%"]);
+    const y = useTransform(scrollYProgress, [0, 1], ["10%", "0%"]);
   return (
-    <div className="px-max mt-10 ">
+    <div ref={targetRef} className="px-max mt-10 relative overflow-x-clip ">
       <UpcomingEventsHeader />
+      <motion.h1
+        style={{ x, y }}
+        className="absolute font-outline-4 font-bebas-neue -top-32 right-0 text-[14rem] italic text-neutral-50 whitespace-nowrap">
+        Upcoming events
+      </motion.h1>
+
       <UpcomingEventList events={events} />
     </div>
   );
@@ -39,9 +52,9 @@ export default function UpcomingEvents() {
 // 3. Header component
 function UpcomingEventsHeader() {
   return (
-    <h1 className="font-bold w-fit font-bebas-neue text-shadow-xs text-heading relative">
+    <h1 className="font-bold w-fit font-bebas-neue text-shadow-xs text-heading relative z-10">
       <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}>
-        Upcoming events 
+        Upcoming events
       </TextAnimate>
       <motion.span
         initial={{ width: 0 }}
@@ -49,7 +62,7 @@ function UpcomingEventsHeader() {
         viewport={{ once: true }}
         transition={{ delay: 0.3, duration: 1, ease: "easeInOut" }}
         className="absolute left-0 bottom-0 h-1 bg-gradient-to-r from-blue-500 to-blue-500 rounded-full"
-      />
+      />{" "}
     </h1>
   );
 }

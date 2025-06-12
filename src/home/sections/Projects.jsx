@@ -170,9 +170,9 @@ export default Projects;
 // Side Panel Component
 function SidePanel() {
   return (
-    <div className="h-[calc(100vh-4.5rem)] sticky top-18 w-1/4  shadow-r-xl bg-blue-500">
-      <div className="relative rounded-xl ">
-        <div className="flex flex-col gap-6 h-[calc(100vh-5.5rem)] mx-2 2xl:my-2 bg-neutral-50 text-neutral-950 py-10 px-6  relative rounded-xl ">
+    <div className="h-[calc(100vh-4.5rem)] sticky top-18 w-1/4 flex items-center justify-center shadow-r-xl bg-blue-500">
+      <div className="relative rounded-xl w-full">
+        <div className="flex flex-col justify-center gap-6 h-[calc(100vh-5.5rem)] mx-2 2xl:my-2 bg-neutral-50 text-neutral-950 py-10 px-6 2xl:px-8 relative rounded-xl ">
           <h1 className="font-bebas-neue font-black relative text-shadow-xs w-fit z-1 text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
             {/* <TextAnimate animation="blurIn" as="h1" by="character" delay={0.1}> */}
             <span className="text-black">Featured</span> <br />

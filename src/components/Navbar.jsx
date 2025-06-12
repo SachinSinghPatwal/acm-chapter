@@ -69,7 +69,7 @@ const Navbar = () => {
               className="text-sm tracking-wide font-inter text-black/80 group transition ease-in-out duration-300 relative px-3"
             >
               {link.name}
-              <span className="absolute left-0 w-0 h-0.5 group-hover:w-full -bottom-1 bg-blue-500/90 transtition ease-in-out duration-300"></span>
+              <span className="absolute left-0 w-0 h-0.5 group-hover:w-full -bottom-6 bg-blue-500/90 transtition ease-in-out duration-300"></span>
             </NavLink>
           ))}
         </div>

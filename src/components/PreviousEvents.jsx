@@ -9,7 +9,8 @@ export default function HorizontalScroll() {
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
-  const x = useTransform(scrollYProgress, [0, 1], ["28%", "-270%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["28%", "-300%"]);
+
   return (
     <div ref={targetRef} className="relative h-[600vh]">
       <div className="sticky flex flex-col justify-between h-[100dvh] top-8 py-16 2xl:py-20 overflow-hidden ">
@@ -18,7 +19,7 @@ export default function HorizontalScroll() {
         {/* List of events */}
         <motion.div
           style={{ x }}
-          className="relative top-3 flex gap-7 3xl:gap-16 h-full w-[100vw] my-10 lg:my-16 2xl:my-20"
+          className="relative top-6 flex gap-7 3xl:gap-16 h-full w-[100vw] my-10 lg:my-16 2xl:my-20"
         >
           {PastEvents.map((event, i) => (
             <BlurFade delay={0.1} key={i} inView>
@@ -61,9 +62,21 @@ export default function HorizontalScroll() {
 }
 
 function PreviousEventsHeader() {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
+  const x = useTransform(scrollYProgress, [0, 1], ["50%", "-30%"]);
   return (
-    <div className="px-max ">
-      <h1 className="font-black w-fit font-bebas-neue text-shadow-xs text-heading  relative">
+    <div ref={targetRef} className="px-max">
+      <motion.h1
+        style={{ x }}
+        className="absolute font-outline-4 font-bebas-neue top-0 right-0 text-[14rem] italic text-neutral-50 whitespace-nowrap"
+      >
+        Previous Events
+      </motion.h1>
+      <h1 className="font-black w-fit font-bebas-neue mt-1 text-shadow-xs tracking-wide text-heading  relative">
         <TextAnimate animation="blurIn" as="h1" by="character" delay={0.3}>
           Previous events
         </TextAnimate>
@@ -86,54 +99,62 @@ const PastEvents = [
   {
     image: "/public/astro.jpg",
     title: "The Legend of Zelda",
-    description: "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
+    description:
+      "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
     date: "30 Feb 2023",
   },
   {
     image: "/public/savage.jpg",
     title: "Super Mario",
-    description: "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
+    description:
+      "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
 
     date: "15 Mar 2023",
   },
   {
     image: "/public/img.jpg",
     title: "Call of Duty",
-    description: "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
+    description:
+      "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
 
     date: "20 Apr 2023",
   },
   {
     image: "/public/img1.jpg",
     title: "Pokémon",
-    description: "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
+    description:
+      "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
 
     date: "10 May 2023",
   },
   {
     image: "/public/img2.jpg",
     title: "Final Fantasy",
-    description: "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
+    description:
+      "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
 
     date: "25 Jun 2023",
   },
   {
     image: "/public/img3.jpg",
     title: "Minecraft",
-    description: "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
+    description:
+      "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
 
     date: "05 Jul 2023",
   },
   {
     image: "/public/arco.jpg",
     title: "Grand Theft Auto",
-    description: "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
+    description:
+      "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
     date: "18 Aug 2023",
   },
   {
     image: "/public/astro.jpg",
     title: "Counter-Strike",
-    description: "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
+    description:
+      "An epic adventure in the world of Hyrule. Join Link as he battles Ganon to save Princess Zelda.",
     date: "01 Nov 2023",
   },
 ];

@@ -222,7 +222,7 @@ const cardData2 = [
 
 // Main Gallery component
 const Gallery = () => (
-  <div className="w-full h-full">
+  <div className="w-full h-full pb-12">
     <DragCards data={cardData} />
     <Columns />
   </div>
