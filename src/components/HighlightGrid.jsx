@@ -54,8 +54,8 @@ const HighlightGrid = () => {
   return (
     <div className="flex flex-col justify-between gap-20 py-10 lg:py-16">
       <div className="h-full w-full grid grid-cols-2 gap-3 ">
-        <div className="h-[33rem] px-max">
-          <div className="bg-neutral-200 rounded-2xl h-full w-full"></div>
+        <div className="h-[36rem] px-max">
+          <div className="bg-neutral-200 shadow rounded-4xl h-full w-full"></div>
         </div>
         <div className="text-neutral-500 h-full text-lg font-inter flex flex-col justify-between ">
           <h2 className="text-6xl font-extrabold text-black ">
@@ -64,7 +64,11 @@ const HighlightGrid = () => {
           </h2>
           <div className="max-w-2xl">
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis debitis adipisci placeat, facere minima cupiditate in, numquam, libero similique consequuntur quo modi amet! Velit, ea ab! Atque eaque quo expedita quidem sapiente sunt ducimus neque ullam voluptatum. Accusamus, vero assumenda.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+              debitis adipisci placeat, facere minima cupiditate in, numquam,
+              libero similique consequuntur quo modi amet! Velit, ea ab! Atque
+              eaque quo expedita quidem sapiente sunt ducimus neque ullam
+              voluptatum. Accusamus, vero assumenda.
             </p>
             <button className="mt-4 underline underline-offset-4 text-blue-600">
               Click here to view more
@@ -85,13 +89,13 @@ const HighlightGrid = () => {
               <p className="text-2xl font-inter ">{item.title}</p>
               <NavLink
                 to={item.link.to}
-                className="text-base font-inter text-neutral-Explore flex items-center gap-1"
+                className="text-base  font-inter text-neutral-Explore flex items-center gap-1"
               >
                 <ArrowRight strokeWidth="1.2px" size={18} />
               </NavLink>
             </div>
 
-            {/* <div className="absolute left-2 top-2 text-neutral-200  ">
+            {/* <div className="absolute right-0 top-0 text-neutral-200  ">
               {item.icons === "Users" && <Users size={80} />}
               {item.icons === "Calendar" && <Calendar size={80} />}
               {item.icons === "Lightbulb" && <Lightbulb size={80} />}

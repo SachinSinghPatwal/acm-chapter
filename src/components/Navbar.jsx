@@ -50,7 +50,7 @@ const Navbar = () => {
   return (
     <motion.div
       style={{ opacity }}
-    className="w-full fixed px-4 sm:px-10 py-8 h-18 flex items-center bg-neutral-50/90 backdrop-blur-lg z-[999] shadow">
+    className="w-full fixed px-4 sm:px-10  h-18 flex items-center bg-neutral-50/0  z-[999] ">
       <div className="w-full max-w-[85rem] mx-auto flex justify-between gap-12 items-center relative">
         <a
           href="/"
@@ -61,22 +61,26 @@ const Navbar = () => {
             <span className="text-blue-500">XIM</span>
           </div>
         </a>
-        <div className=" hidden lg:flex relative gap-6 -left-10 top-1">
+
+        {/* MIDDLE LINKS */}
+        <div className=" hidden lg:flex py-4 px-10 bg-white backdrop-blur-lg rounded-4xl relative overflow-clip gap-6 -left-10 top-1">
           {Links.map((link, index) => (
             <NavLink
               key={index}
               to={link.link}
-              className="text-sm tracking-wide font-inter text-black/80 group transition ease-in-out duration-300 relative px-3"
+              className="group text-sm tracking-wide font-inter text-black/80 group transition ease-in-out duration-300 relative px-3"
             >
               {link.name}
-              <span className="absolute left-0 w-0 h-0.5 group-hover:w-full -bottom-6 bg-blue-500/90 transtition ease-in-out duration-300"></span>
+              <span className="absolute left-0 w-0 h-[1px] group-hover:w-full -bottom-4 bg-blue-500/90 transtition ease-in-out duration-300"></span>
             </NavLink>
           ))}
         </div>
         <NoticeBoard isOpen={isOpen} />
+
+        {/* THE MENU BUTTON */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="rounded-full scale-80 md:scale-100 bg-neutral-200/80 cursor-pointer p-3.5 relative  flex items-center justify-center"
+          className="rounded-full scale-80 md:scale-100 bg-neutral-50 cursor-pointer p-3.5 relative  flex items-center justify-center"
         >
           <Menu />
         </button>
