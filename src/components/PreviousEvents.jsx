@@ -30,7 +30,7 @@ export default function HorizontalScroll() {
               >
                 <img
                   src={event.image}
-                  className={`h-full w-full rounded-lg relative group-hover:-top-2 group-hover:-left-2  ${event.image}`}
+                  className={`h-full w-full rounded-lg relative shadow-xl group-hover:-top-2 group-hover:-left-2  ${event.image}`}
                 />
                 <div className="absolute inset-0 bg-black h-full mx-auto w-full rounded-lg -z-10 " />
                 <p className="absolute hidden group-hover:block -top-6 xl:-top-8 right-3 text-neutral-500 text-xs xl:text-sm">

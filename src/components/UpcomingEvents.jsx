@@ -97,7 +97,7 @@ function UpcomingEventCard({ image, title, description }) {
       <motion.div className="absolute inset-0 bg-neutral-800 -z-10 rounded-lg " />
       <motion.div
         whileHover={{ x: -9, y: -5 }}
-        className="w-full h-full rounded-lg overflow-clip relative -top-1  "
+        className="w-full h-full rounded-lg shadow-xl overflow-clip relative -top-1  "
         style={{
           backgroundImage: `url(${image})`,
           backgroundSize: "cover",
@@ -105,9 +105,10 @@ function UpcomingEventCard({ image, title, description }) {
           backgroundRepeat: "no-repeat",
         }}
       ></motion.div>
+      
       <div className="absolute my-1 md:my-3 w-full">
         <div className=" flex items-center justify-between">
-          <p className="font-inter text-xl xl:text-2xl font-bold text-black relative  transition-all duration-500">
+          <p className="font-inter text-lg xl:text-2xl 2xl:text-3xl font-bold text-black relative  transition-all duration-500">
             {title}
           </p>
           <motion.p
@@ -118,7 +119,7 @@ function UpcomingEventCard({ image, title, description }) {
             <ArrowUpRight className="size-6 mb-2" />
           </motion.p>
         </div>
-        <p className="text-neutral-600 text-xs xl:text-sm 2xl:text-base hidden group-hover:block">
+        <p className="text-neutral-600 mt-0.5 text-xs xl:text-sm 2xl:text-base hidden group-hover:block">
           {description}
         </p>
       </div>

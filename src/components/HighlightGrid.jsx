@@ -52,7 +52,7 @@ const GridDetails = [
 
 const HighlightGrid = () => {
   return (
-    <div className="flex flex-col justify-between gap-20 py-10 lg:py-16">
+    <div className="flex flex-col justify-between gap-20 py-10 lg:py-16 2xl:py-20 max-w-[100rem] px-max mx-auto">
       <div className="h-full w-full grid grid-cols-2 gap-3 ">
         <div className="h-[36rem] px-max">
           <div className="bg-neutral-200 shadow rounded-4xl h-full w-full"></div>
