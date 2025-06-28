@@ -18,7 +18,6 @@ const Page = () => {
       <About />
       <AboutMore />
       <Hightlights/>
-
       <Events/>
       <Projects/>
       <MeetTeam/>

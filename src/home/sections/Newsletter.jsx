@@ -9,7 +9,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { NavLink } from "react-router";
-import { div } from "framer-motion/client";
 
 const CallToAction = () => {
   return (
@@ -117,15 +116,15 @@ function FooterNavigation() {
           <ChevronLeft size={18} />
           Team
         </a>
-        <a href="/" className="">
+        <a href="/" className="hover:text-neutral-400">
           <House size={32} />
         </a>
         <a
           href="events"
           className="font-inter uppercase text-lg flex items-center group cursor-pointer"
         >
-          Events{" "}
-          <ChevronRight size={19} className="relative group-hover:left-2" />
+          <p>Events</p>
+          <ChevronRight size={19} className="relative left-0.5 group-hover:left-2 group-hover:text-neutral-300 transition-all ease-in-out duration-300 " />
         </a>
       </div>
     </div>

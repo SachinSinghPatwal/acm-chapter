@@ -6,9 +6,8 @@ import PreviousEventsMobile from "../../components/PreviousEventsMobile";
 
 const Events = () => {
   return (
-  <div className="min-h-screen ">
-      <div className=" h-full mx-auto text-2xl  flex flex-col gap-10">
-        
+    <div className="min-h-screen ">
+      <div className=" h-full mx-auto text-2xl flex flex-col gap-10 group">
         <div className="hidden md:block">
           <UpcomingEvents />
         </div>

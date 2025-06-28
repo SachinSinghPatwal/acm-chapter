@@ -23,6 +23,9 @@ body {
 @theme {
   --font-bebas-neue: 'Bebas Neue', sans-serif;
   --font-inter: 'Inter',  sans-serif;
+  --breakpoint-3xl: 120rem;
+  --breakpoint-4xl: 130rem;
+  
 }
 
 /* CUSTOM TAILWIND CLASSES */

@@ -5,7 +5,7 @@ import { AuroraText } from "../../components/magicui/AuroraText";
 
 const Hightlights = () => {
   return (
-    <div className="min-h-screen text-2xl w-full py-10 px-max overflow-x-clip">
+    <div className="min-h-screen text-2xl w-full py-16 px-max overflow-x-clip">
       <HighlightHeader />
       <HighlightGrid />
     </div>

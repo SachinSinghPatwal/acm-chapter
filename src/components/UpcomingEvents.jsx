@@ -70,7 +70,7 @@ function UpcomingEventsHeader() {
 // 4. List component
 function UpcomingEventList({ events }) {
   return (
-    <motion.div className="grid grid-cols-1 lg:grid-cols-2 md:gap-16 lg:gap-8 xl:gap-10 my-6 md:my-10 xl:my-14">
+    <motion.div className="grid grid-cols-1 lg:grid-cols-2 md:gap-16 lg:gap-8 xl:gap-10 py-8 md:py-10 xl:py-14">
       {events.map((event) => (
         <BlurFade key={event.id} delay={event.delay} inView>
           <UpcomingEventCard

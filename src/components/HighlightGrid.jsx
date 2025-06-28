@@ -52,9 +52,9 @@ const GridDetails = [
 
 const HighlightGrid = () => {
   return (
-    <div className="flex flex-col justify-between gap-20 py-10 lg:py-16 2xl:py-20 max-w-[100rem] px-max mx-auto">
+    <div className="flex flex-col justify-between gap-20 py-12 lg:py-18 2xl:py-22 max-w-[100rem] px-max mx-auto">
       <div className="h-full w-full grid grid-cols-2 gap-3 ">
-        <div className="h-[36rem] px-max">
+        <div className="h-[32rem] px-max">
           <div className="bg-neutral-200 shadow rounded-4xl h-full w-full"></div>
         </div>
         <div className="text-neutral-500 h-full text-lg font-inter flex flex-col justify-between ">
@@ -76,7 +76,8 @@ const HighlightGrid = () => {
           </div>
         </div>
       </div>
-      <div className="h-full w-full grid grid-cols-4 gap-4">
+
+      <div className="h-full w-full grid grid-cols-4 gap-4 py-4 my-4">
         {GridDetails.map((item, index) => (
           <div
             key={index}
