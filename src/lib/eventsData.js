@@ -81,6 +81,73 @@ const events = [
       "/assets/events/designathon/gallery2.jpg",
       "/assets/events/designathon/gallery3.jpg"
     ]
+  },
+  {
+    id: "events4",
+    title: "Hack the Night 2025",
+    posterImg: "/assets/events/hackthenight/poster.png",
+    backgroundImg: "/assets/events/hackthenight/bg.jpg",
+    venue: "Innovation Hub, Block D",
+    time: "October 10–11, 2025 | 8:00 PM – 8:00 AM",
+    description: `
+      An overnight hackathon where teams build solutions to real-world problems. Present your project to a panel of judges and win exciting prizes.
+    `,
+    rulesAndRegulation: [
+      "Teams of 3–5 members.",
+      "All code must be written during the event.",
+      "At least one member must be present for the final demo.",
+      "Respect the workspace and fellow participants."
+    ],
+    leaderboard: [
+      { name: "Team NightOwls", score: 98 },
+      { name: "Code Crusaders", score: 95 },
+      { name: "Bug Busters", score: 93 }
+    ],
+    gallery: [
+      "/assets/events/hackthenight/gallery1.jpg",
+      "/assets/events/hackthenight/gallery2.jpg"
+    ]
+  },
+  {
+    id: "events5",
+    title: "Women in Tech Panel",
+    posterImg: "/assets/events/womenintech/poster.png",
+    backgroundImg: "/assets/events/womenintech/bg.jpg",
+    venue: "Conference Room 1, Block B",
+    time: "November 15, 2025 | 3:00 PM – 5:00 PM",
+    description: `
+      A panel discussion featuring accomplished women in technology. Hear their stories, challenges, and advice for aspiring technologists.
+    `,
+    rulesAndRegulation: [
+      "Open to all.",
+      "Questions for the panel must be submitted in advance.",
+      "Maintain respectful conduct throughout the event."
+    ],
+    leaderboard: [],
+    gallery: [
+      "/assets/events/womenintech/gallery1.jpg",
+      "/assets/events/womenintech/gallery2.jpg"
+    ]
+  },
+  {
+    id: "events6",
+    title: "Algorithm Visualization Workshop",
+    posterImg: "/assets/events/algovis/poster.png",
+    backgroundImg: "/assets/events/algovis/bg.jpg",
+    venue: "Lab 204, Block E",
+    time: "December 2, 2025 | 11:00 AM – 2:00 PM",
+    description: `
+      Learn how to visualize algorithms using JavaScript and D3.js. Hands-on session with live coding and interactive demos.
+    `,
+    rulesAndRegulation: [
+      "Bring your own laptop.",
+      "Basic knowledge of JavaScript recommended.",
+      "Workshop is limited to 30 participants."
+    ],
+    leaderboard: [],
+    gallery: [
+      "/assets/events/algovis/gallery1.jpg"
+    ]
   }
 ];
 

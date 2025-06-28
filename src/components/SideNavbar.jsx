@@ -62,7 +62,7 @@ function SideNavbar({ isOpen, setIsOpen }) {
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 h-fit md:grid-cols-2 sm:gap-x-20 w-[90%] uppercase font-bold relative text-neutral-800/90">
+        <div className="grid grid-cols-1 h-fit md:grid-cols-2 py-2 sm:gap-x-20 w-[90%] uppercase font-bold relative text-neutral-800/90">
           {SideNavLinks.map((link, index) => (
             <motion.a
               onMouseEnter={() => {
@@ -75,7 +75,7 @@ function SideNavbar({ isOpen, setIsOpen }) {
               transition={{ duration: 0.6, delay: 0.5 + 0.11 * index }}
               key={index}
               href={link.link}
-              className={`group flex p-1 xl:p-2 3xl:p-2.5 4xl:p-3 items-center relative text-3xl md:text-3xl lg:text-4xl xl:text-[2.5rem] 2xl:text-5xl 3xl:text-6xl w-fit ${
+              className={`group flex p-1 xl:p-3 3xl:p-3 4xl:p-4 items-center relative text-3xl md:text-3xl lg:text-4xl xl:text-[2.5rem] 2xl:text-5xl 3xl:text-6xl w-fit ${
                 hover
                   ? "md:hover:text-blue-600 md:text-neutral-500 hover:blur-none blur-[0.5px]"
                   : ""
@@ -90,14 +90,14 @@ function SideNavbar({ isOpen, setIsOpen }) {
 
       <div className="absolute hidden  right-0 -bottom-1 lg:flex item-center gap-6 p-4 xl:px-6 rounded-tl-3xl bg-neutral-100">
         {Socials.map((icon, i) => (
-          <motion.Link
+          <motion.a
             whileHover={{ y: -4 }}
             key={i}
             className={`${icon.hoverColor} size-12 xl:size-14 rounded-full flex justify-center items-center shadow-md/30 hover:shadow-lg/30 relative ease-in-out cursor-pointer`}
-            to={icon.link}
+            href={icon.link}
           >
             {icon.icon}
-          </motion.Link>
+          </motion.a>
         ))}
       </div>
     </div>
