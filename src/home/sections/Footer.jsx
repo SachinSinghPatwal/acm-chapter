@@ -1,4 +1,3 @@
-import { div } from "framer-motion/client";
 import { ArrowUpRight, Instagram, Linkedin, Twitter } from "lucide-react";
 import React from "react";
 import { NavLink } from "react-router";
@@ -8,7 +7,7 @@ const Footer = () => {
     <div className="">
       <div className="mb-[calc(100vh-4.05rem)]"></div>
 
-      <div className="h-[calc(100vh-4rem)] grid grid-rows-6 w-full fixed bottom-0 bg-neutral-950 text-neutral-400/90 -z-10 px-max ">
+      <div className="h-[calc(100vh-4rem)] w-full grid grid-rows-6  fixed bottom-0 bg-neutral-950 text-neutral-400/90 -z-10 px-max ">
         <div className="row-span-5 pt-4 border-y-2 border-neutral-800">
           <FooterComponent />
         </div>
@@ -80,7 +79,6 @@ function FooterComponent() {
         <div>Community</div>
         <div>Code of Conduct</div>
         <div>FAQ</div>
-        
       </div>
     </div>
   );

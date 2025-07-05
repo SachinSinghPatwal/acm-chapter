@@ -29,18 +29,19 @@ const events = [
 // 2. Main UpcomingEvents component
 export default function UpcomingEvents() {
   const targetRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-      target: targetRef,
-      offset: ["start end", "end start"],
-    });
-    const x = useTransform(scrollYProgress, [0, 1], ["20%", "-100%"]);
-    const y = useTransform(scrollYProgress, [0, 1], ["10%", "0%"]);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
+  const x = useTransform(scrollYProgress, [0, 1], ["20%", "-100%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["10%", "0%"]);
   return (
     <div ref={targetRef} className="px-max mt-10 relative overflow-x-clip ">
       <UpcomingEventsHeader />
       <motion.h1
         style={{ x, y }}
-        className="absolute font-outline-4 font-bebas-neue -top-32 right-0 text-[14rem] italic text-neutral-50 whitespace-nowrap">
+        className="absolute font-outline-4 font-bebas-neue -top-32 right-0 text-[14rem] italic text-neutral-50 whitespace-nowrap"
+      >
         Upcoming events
       </motion.h1>
 
@@ -105,7 +106,7 @@ function UpcomingEventCard({ image, title, description }) {
           backgroundRepeat: "no-repeat",
         }}
       ></motion.div>
-      
+
       <div className="absolute my-1 md:my-3 w-full">
         <div className=" flex items-center justify-between">
           <p className="font-inter text-lg xl:text-2xl 2xl:text-3xl font-bold text-black relative  transition-all duration-500">

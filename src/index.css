@@ -1,50 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
 
 * {
-    -ms-overflow-style: none;
+  -ms-overflow-style: none;
 }
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 html {
   scroll-behavior: smooth;
-
 }
-body {
+body,
+html {
   overscroll-behavior: none;
+  min-width: 100vw;
 }
-
-
-
 
 @theme {
-  --font-bebas-neue: 'Bebas Neue', sans-serif;
-  --font-inter: 'Inter',  sans-serif;
+  --font-bebas-neue: "Bebas Neue", sans-serif;
+  --font-inter: "Inter", sans-serif;
   --breakpoint-3xl: 120rem;
   --breakpoint-4xl: 130rem;
-  
 }
 
 /* CUSTOM TAILWIND CLASSES */
-.px-max{
-  @apply px-4 sm:px-6 md:px-8 lg:px-10 xl:px-16 2xl:px-20 ;
+.px-max {
+  @apply px-4 sm:px-6 md:px-8 lg:px-10 xl:px-16 2xl:px-20;
 }
 
-.pl-max{
-  @apply pl-4 sm:pl-6 md:pl-8 lg:pl-10 xl:px-16 2xl:pl-20 ;
+.pl-max {
+  @apply pl-4 sm:pl-6 md:pl-8 lg:pl-10 xl:px-16 2xl:pl-20;
 }
 
-.text-heading{
+.text-heading {
   @apply text-4xl sm:text-5xl md:text-6xl xl:text-8xl 2xl:text-[5rem] font-bold;
 }
 
 /* AuroraText */
 @theme inline {
   --animate-aurora: aurora 8s ease-in-out infinite alternate;
- 
+
   @keyframes aurora {
     0% {
       background-position: 0% 50%;
@@ -71,7 +68,7 @@ body {
 
 @theme inline {
   --animate-shine: shine var(--duration) infinite linear;
- 
+
   @keyframes shine {
     0% {
       background-position: 0% 0%;
